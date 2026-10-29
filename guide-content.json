@@ -1,0 +1,297 @@
+[
+  {
+    "title": "FIND YOUR CONTROLS",
+    "body": "Open Menu → Settings → Volume Controls to adjust music and effects separately. Menu → Guides opens the Field Guide; Bonus and Shop & Items group games and supplies. Gentle upbeat music varies by world and activity, with three arrangements across each world’s puzzle progress; warning cues become more urgent with 20 seconds or 5 moves left, and again at 7 seconds or 2 moves. Watch the counters even when sound is muted. Use Pause during a puzzle; My Map and Quests remain in the bottom navigation between levels.",
+    "category": "Getting started"
+  },
+  {
+    "title": "LIVES & PAUSE",
+    "body": "Lost lives refill over time. If you have banked lives, tap USE SAVED LIFE in the out-of-lives popup to claim one without visiting Inventory. On a failed level, then tap TRY AGAIN. Pause to take a break, restart or open sound settings. A failed level costs one life.",
+    "category": "Getting started"
+  },
+  {
+    "title": "MATCH & MOVE",
+    "body": "Swap neighboring gems to match 3 or more. Swipe up, down, left or right. A swap with no match moves back.",
+    "category": "Getting started"
+  },
+  {
+    "title": "TEN PUZZLE STYLES",
+    "body": "Ten puzzle styles change how you move and clear gems. Choose Puzzle styles above to read each set of controls. Check your level briefing for the active style; the in-game Field Guide also includes animated demonstrations. All ten styles rotate from the second world onward.",
+    "category": "Getting started"
+  },
+  {
+    "title": "YOUR MISSION",
+    "body": "Read the opening quest briefing. Tap the goal panel to review it. Watch the counters below the board. Complete every goal before your moves or time run out.",
+    "category": "Getting started"
+  },
+  {
+    "title": "BLOOM GATHER",
+    "body": "Tap 3+ same-color gems connected by edges. Pairs do not clear. Falling joins of 3+ cascade free. Entirely fresh groups wait for your next tap. Larger groups grow bonus powers.",
+    "category": "Puzzle styles"
+  },
+  {
+    "title": "CROSS GATHER",
+    "body": "Tap a gem to clear 2+ same-color gems in straight rays from it. Rays stop at another color or gap; they cannot turn. Falling joins cascade free. Entirely fresh groups wait for your next tap.",
+    "category": "Puzzle styles"
+  },
+  {
+    "title": "DIAGONAL GATHER",
+    "body": "Tap 2+ same-color gems connected by edges OR corners. Falling joins cascade free. Entirely fresh groups wait for your next tap.",
+    "category": "Puzzle styles"
+  },
+  {
+    "title": "DIAGONAL MATCH",
+    "body": "Swap any neighboring gems, including diagonally. Make a straight row or column of 3+.",
+    "category": "Puzzle styles"
+  },
+  {
+    "title": "GATHER",
+    "body": "Tap 2+ same-color gems touching up, down, left or right. No swapping or diagonals. Falling joins cascade free. Entirely fresh groups wait for your next tap.",
+    "category": "Puzzle styles"
+  },
+  {
+    "title": "MATCH 3",
+    "body": "Swap neighboring gems up, down, left or right to make a row or column of 3+.",
+    "category": "Puzzle styles"
+  },
+  {
+    "title": "RISING TIDES",
+    "body": "Match 3; gems rise and refill from below. Deliver relics to the TOP arrows.",
+    "category": "Puzzle styles"
+  },
+  {
+    "title": "RIVER ROWS",
+    "body": "Swipe left/right, or tap two horizontal neighbors. The connected row shifts one space and wraps at its ends. Make a line of 3+. Gaps and blockers stop the row. Tap a power to activate it, or shift its row to fire it. Powers do not need another match.",
+    "category": "Puzzle styles"
+  },
+  {
+    "title": "STAR HOP",
+    "body": "Tap a gem, then a destination two squares across and one up/down, or two up/down and one across. Drag between them also works. Make a straight line of 3+.",
+    "category": "Puzzle styles"
+  },
+  {
+    "title": "WIND COLUMNS",
+    "body": "Swipe up/down, or tap two vertical neighbors. The connected column shifts one space and wraps at its ends. Make a line of 3+. Gaps and blockers stop the column. Tap a power to activate it, or shift its column to fire it. Powers do not need another match.",
+    "category": "Puzzle styles"
+  },
+  {
+    "title": "BREAK THE ICE",
+    "body": "Look for the bright blue crystal frame and frosted corners. Match ON the tile or hit it with powers. Pale dots on the dark bottom badge show remaining layers.",
+    "category": "Puzzle rules"
+  },
+  {
+    "title": "COMBINE POWERS",
+    "body": "In swap styles, swap two neighboring power gems for a stronger combination. In shifting styles, every existing power in the shifted segment fires at its new position. Their clear areas work together.",
+    "category": "Puzzle rules"
+  },
+  {
+    "title": "CRACK THE STONES",
+    "body": "Stone blocks stop swaps and falling gems. Adjacent matches break one layer; a direct power or hammer hit breaks two. The dots show remaining layers.",
+    "category": "Puzzle rules"
+  },
+  {
+    "title": "CUT THE VINES",
+    "body": "Look for the frame of twisting copper roots and plum leaves. Match NEXT TO it. Pale dots on the dark bottom badge show remaining layers; gems can move through.",
+    "category": "Puzzle rules"
+  },
+  {
+    "title": "DELIVER STORY RELICS",
+    "body": "Each world has its own story object. Normally, clear gems below it to reach the bottom gold arrows. In Rising Tides, clear ABOVE the relic to lift it to the TOP arrows. Relics cannot be blasted away.",
+    "category": "Puzzle rules"
+  },
+  {
+    "title": "FREE RESHUFFLES",
+    "body": "No legal matches, or the same small tap group keeps being your only option? Pip warns you before a free shuffle. Your goals stay in place, no booster is spent, and the clock pauses during the warning.",
+    "category": "Puzzle rules"
+  },
+  {
+    "title": "LIGHT THE STORY ROUTE",
+    "body": "Match on beacon 1, then 2 and onward. Only the glowing numbered tile receives light; power hits work too.",
+    "category": "Puzzle rules"
+  },
+  {
+    "title": "MAKE A BOMB",
+    "body": "Join a row of 3 and a column of 3 at one shared gem: 5 gems forming a T or L. This creates a bomb. In Gather styles, clear a group of 7 or 8 to create one. Swap or match a bomb to explode. In Gather and shifting styles, tap it to explode.",
+    "category": "Puzzle rules"
+  },
+  {
+    "title": "NO-MATCH PENALTIES",
+    "body": "Hard, Extreme and Legendary: a swap without a match or a group below the required size costs 1 move or 3 seconds. Blocked swaps and selection taps cost nothing. Lower tiers have no penalty.",
+    "category": "Puzzle rules"
+  },
+  {
+    "title": "OPEN THE CRATES",
+    "body": "Look for the wooden crate with gold corners. Match beside it or hit it with powers. Pale dots on the dark bottom badge show how many hits remain.",
+    "category": "Puzzle rules"
+  },
+  {
+    "title": "RAINBOW POWER",
+    "body": "In swap and shifting styles, match five in a straight line. In Gather styles, clear a group of 9 or more. Swap the rainbow gem with a color to clear that color. In Gather or shifting styles, tapping it clears its own gem color.",
+    "category": "Puzzle rules"
+  },
+  {
+    "title": "ROW & COLUMN POWERS",
+    "body": "In swap and shifting styles, match four in a row to make a power gem. In Gather styles, clear a group of 5 or 6 to make a row power. Swap it with a neighbor to clear its row or column. In Gather or line-shifting styles, tap it; shifting a powered line also fires it.",
+    "category": "Puzzle rules"
+  },
+  {
+    "title": "SET OFF POWERS",
+    "body": "Create powers with 4 in a line, 5 in a line, or 5 in a T or L. Gather styles instead use groups of 5–6 for row powers, 7–8 for bombs, or 9+ for rainbows. Then swap or match them to fire; in Gather or shifting styles, tap a power. Shifting its line also activates it. Making one alone does not count as firing it.",
+    "category": "Puzzle rules"
+  },
+  {
+    "title": "BOMB BOOSTER",
+    "body": "Select a target, then use Bomb to hit the surrounding 3 by 3 area.",
+    "category": "Boosters & hints"
+  },
+  {
+    "title": "EXTRA TIME OR MOVES",
+    "body": "The clock booster adds 30 seconds on timed levels, or 5 moves on move-limited levels.",
+    "category": "Boosters & hints"
+  },
+  {
+    "title": "HAMMER",
+    "body": "Select the tile you want to hit, then tap Hammer. Without a selection it picks a useful goal tile.",
+    "category": "Boosters & hints"
+  },
+  {
+    "title": "LIGHTNING BOOSTER",
+    "body": "Select a target, then use Lightning to strike its full row and column.",
+    "category": "Boosters & hints"
+  },
+  {
+    "title": "NEED A HINT?",
+    "body": "Opening moves, Hint boosters and the free hint after 15 seconds without a touch highlight a legal move. For moving gems, follow the gold arrow from its starting dot to its pointed tip. Tap-only puzzles highlight a group or power instead. Opening and idle hints never spend coins or hint inventory. Hints do not move gems for you.",
+    "category": "Boosters & hints"
+  },
+  {
+    "title": "RAINBOW BOOSTER",
+    "body": "Select a gem, then tap Rainbow to remove its color. With no selection, it chooses a useful color.",
+    "category": "Boosters & hints"
+  },
+  {
+    "title": "SHUFFLE",
+    "body": "Mix the gems to discover fresh matches. Your goals, moves and obstacles stay in place.",
+    "category": "Boosters & hints"
+  },
+  {
+    "title": "BUILD YOUR WORLD",
+    "body": "Tap a highlighted building on My Map. Its dock shows the saved stages and cost; construction happens at that same parcel. Close the dock to keep exploring. Win 1, 2 or 3 Build Coins to match your level rating. Improving a previous rating earns only the difference; repeating it earns none. Build stages cost 4, 6 and 10 Build Coins: 20 per project, 80 per world. Gold coins are separate. After five first wins in a chapter, the keeper supplies only the coins still missing to finish eligible projects, counting your saved balance first. This help is awarded once per chapter. Saved credits are used before new support, so surplus gradually pays for future construction. Existing buildings stay paid and saved balances are preserved.",
+    "category": "Worlds & quests"
+  },
+  {
+    "title": "EASY · CIRCLE",
+    "body": "A round badge marks open boards and forgiving move limits. Learn a goal without racing a clock.",
+    "category": "Worlds & quests"
+  },
+  {
+    "title": "EXTREME · HEXAGON",
+    "body": "A six-sided badge marks complex boards and multiple goals. Build and combine your own power gems.",
+    "category": "Worlds & quests"
+  },
+  {
+    "title": "HARD · DIAMOND",
+    "body": "A diamond marks tighter allowances and combined goals. Plan power gems and delivery routes before swapping.",
+    "category": "Worlds & quests"
+  },
+  {
+    "title": "LEGENDARY · STAR",
+    "body": "A five-point star marks the highest tier: three or more goals and demanding routes. Every move or second matters.",
+    "category": "Worlds & quests"
+  },
+  {
+    "title": "MAP & STORY",
+    "body": "Open Menu → Worlds → My World Map to explore all 50 realms. My Map returns to your current town; Quests opens your tasks and unclaimed rewards. Return missions bring new story chapters every five levels.",
+    "category": "Worlds & quests"
+  },
+  {
+    "title": "MAP DIFFICULTY KEY",
+    "body": "The map badge shows difficulty, not the board layout. Look for these six shapes before choosing a level. Gray means locked.",
+    "category": "Worlds & quests"
+  },
+  {
+    "title": "MEDIUM · CLIPPED SQUARE",
+    "body": "A square with clipped corners marks a step up. Plan matches around obstacles; some levels use a timer.",
+    "category": "Worlds & quests"
+  },
+  {
+    "title": "QUEST SKILLS",
+    "body": "Quests can ask for colored gems, wins, Easy or Medium wins, Hard-or-higher wins, efficient timed or move wins, group or swap/shift wins, obstacle layers, delivered relics, or building stages. Tap an unfinished quest to find a suitable unlocked puzzle or build. Claim completed quests to earn wheel spins.",
+    "category": "Worlds & quests"
+  },
+  {
+    "title": "STARS & GIFTS",
+    "body": "Your performance rating uses what remains when you win, not your score. Moves: 10+ earns 3 stars, 4-9 earns 2, and 0-3 earns 1. Timed levels: 55%+ time earns 3, 25%+ earns 2, and less earns 1. Your best rating also earns 1, 2 or 3 BUILD COINS. Improving a previous rating pays only the difference. Build stages cost 4, 6 and 10 Build Coins. After five first wins, the keeper counts your saved balance and covers only missing construction coins, once per chapter. Higher ratings still earn their difference. Gold coins are separate. Collect gifts along the map and return for a different daily gift.",
+    "category": "Worlds & quests"
+  },
+  {
+    "title": "VERY EASY · FLOWER",
+    "body": "A six-petal badge marks a gentle lesson or breather. Generous moves and simple goals; no timer.",
+    "category": "Worlds & quests"
+  },
+  {
+    "title": "BONUS SCATTERS",
+    "body": "Count Bonus symbols anywhere in the 15 full cells. Exactly two return your bet once; three unlock 2 free spins at 1× coins; four unlock 3 at 2×; five or more unlock 6 at 3×. Every 3+ trigger also opens Pip’s Firefly Flight. Free spins can retrigger both rewards. Flight winnings do not use the free-spin multiplier. See FIREFLY FLIGHT below for controls, health and earned prizes. Older unfinished lantern and chest bonuses keep their original rules.",
+    "category": "Bonus games"
+  },
+  {
+    "title": "DAILY DISCOVERY",
+    "body": "Open Discovery beside Wheel and Slots. Compare both pictures and tap a changed detail in either one. Pinch to zoom and drag to inspect. Find eight changes before your misses run out. Your first hint in each round is free; later hints cost 50 coins. A pink ring marks the detail; viewing an existing hint again is free. The play count includes this realm’s free or unfinished scene plus saved Discovery tokens. The first three completed scenes across all realms each award 100 coins and one hint daily; further scenes are practice. Prizes reset at local midnight. New rounds use visible object changes: a missing piece, a different shape or a changed count. Subtle color or shading changes are not clues. The three most recent compositions are avoided. The previous five clue sets are avoided. Unfinished rounds keep your clues, hints and progress, including after midnight. A Discovery replay token starts a fresh round after a finished or failed scene with one free hint and an extra completion reward; use the token replay button on the Discovery result panel, or open Inventory → Tokens.",
+    "category": "Bonus games"
+  },
+  {
+    "title": "DAILY PAIRS",
+    "body": "Open Pairs beside Wheel, Slots and Discovery, or in Menu → Bonus. Find ten matching pairs among 20 cards. New rounds rotate through all 50 friends; saved rounds keep their faces. Revealing two cards counts as one move. Finish in 10–12 moves for one rainbow booster, 13–20 for one hammer, 21–30 for 150 coins, or 31+ for 75 coins. Unfinished six-pair rounds keep their original reward thresholds. No entry fee, timer or life cost. Cards flip as you reveal them; matching pairs sparkle. Mismatches stay visible briefly. Cards and moves save when you leave. One completed round per local day; unfinished rounds resume after midnight and use the completion day's allowance. Rewards save automatically; the last pair celebrates before the prize panel opens. Close the panel to return. Badges count the free or unfinished round plus saved tokens. Extra rounds: buy a Pairs token in Coin Shop → Tokens or Market Place → Token Packs and use it directly in Pairs or Inventory → Tokens after completing today’s round.",
+    "category": "Bonus games"
+  },
+  {
+    "title": "EARN WHEEL SPINS",
+    "body": "Tap Quests at the bottom of your map or any secondary screen. World and Daily cards show each task, progress and exact reward. Tap a completed card to claim its spins. Daily tasks reset at local midnight; earned spins carry over. Get extra spin tokens in Coin Shop → Tokens or Market Place → Token Packs. The wheel count includes earned spins plus saved tokens. Spin directly on the wheel; earned spins are used first, then one token per spin.",
+    "category": "Bonus games"
+  },
+  {
+    "title": "FIREFLY FLIGHT",
+    "body": "Guide Pip with touch, drag, or arrow keys. Rescue five fireflies in each clearing, then enter its portal. Each clearing gets harder: 2 gusts, then 3 faster gusts and 2 thorn patches, then 4 fast crossing gusts and 4 thorn patches. Steer around the purple thorns and moving gusts. A one-second safe entry lets you orient yourself in each clearing. Start with 100% bonus health. Each gust or thorn hit removes 25%; a brief recovery shield prevents repeated damage from the same contact. At 0%, the flight ends and you keep only what you earned. Each rescue earns 1/15 of the coin treasure, rounded down cumulatively. Any available non-rainbow booster unlocks at 10 rescues; an available rainbow unlocks at 15. The bottom panel shows earned winnings, starting at zero. Health and rescues are saved; reopening does not heal Pip. Bonus health is separate from puzzle lives. Your regular free spins wait for your return.",
+    "category": "Bonus games"
+  },
+  {
+    "title": "PRIZE WHEEL",
+    "body": "Tap Wheel on the map, then tap the wheel or Spin button. One earned spin or saved wheel token awards one of 12 equally likely prizes: coins or boosters, including rainbows, hammers and bombs. The pointer marks your reward. Tap Rules for every quantity.",
+    "category": "Bonus games"
+  },
+  {
+    "title": "TREASURE SLOTS",
+    "body": "Use −/+ to select 50–1,000 coins in steps of 25. Tap PRESET BETS to choose 50, 100, 250, 500 or 1,000 coins. MAX BET selects your highest affordable stake up to 1,000; choosing a stake does not spin. Tap Spin. Three horizontal and two diagonal paylines pay. Ordinary matches pay from either edge; the higher match on each payline pays once. Wild substitutes for ordinary symbols. Hints can start at three matches; other boosters need four, and rainbows need five. Coins scale with your bet; boosters do not.",
+    "category": "Bonus games"
+  },
+  {
+    "title": "BOOSTER INVENTORY",
+    "body": "Open Inventory, then Boosters & Lives to see your saved boosters and lives in a compact grid. Each tile shows its item and quantity. Use boosters with the booster buttons during a puzzle. When hearts are missing, tap USE SAVED LIFE in the Lives & Refills or out-of-lives popup to claim a banked life. Buy more using earned coins in Pip’s Coin Shop or real money in Pip’s Market Place.",
+    "category": "Shops & rewards"
+  },
+  {
+    "title": "BUY & FIND TOKENS",
+    "body": "Open Coin Shop → Tokens for individual tokens. Choose Market Place → Token Packs for real-money packs. Packs show exact quantities for each included game, including mixed-game collections. Buy one wheel token for 300 coins, one Discovery replay for 400 coins or one Pairs replay for 400 coins. Tap the token’s coin-price button, then confirm. Find your saved count and Play button in Inventory → Tokens. Blue bonus buttons use gold number badges for available plays or rewards. Unavailable inventory actions are disabled. Token packs in Market Place use real money through the store. Tokens stay saved until used.",
+    "category": "Shops & rewards"
+  },
+  {
+    "title": "PIP’S COIN SHOP",
+    "body": "Choose Boosters, Tokens or Lives directly below the store tabs. Spend earned coins on hints, hearts, boosters and saved game tokens. Tap an item and confirm its coin price. A Purchase Complete celebration confirms the item was saved; tap Continue to return to the shop. This section never charges real money. Use the bottom navigation to switch between the shop, Inventory and Watch & Earn. Market Place is separate and contains real-money purchases.",
+    "category": "Shops & rewards"
+  },
+  {
+    "title": "PIP’S MARKET PLACE",
+    "body": "Buy coin packs, booster bundles, hearts and token packs with real money. Choose Coin Packs, Booster Bundles or Token Packs. Use the bottom navigation to switch between the shop, Inventory and Watch & Earn. Items bought with earned coins are in the separate Coin Shop. Tap an available pack to review and confirm the store purchase. The store shows your local currency and final price. Preview or unavailable packs cannot be bought. A Purchase Complete celebration lists the exact items after successful delivery and saving. Check Purchases retries unfinished transactions; spent consumables are not restored. Read Terms & Conditions from the store footer or Menu → Settings.",
+    "category": "Shops & rewards"
+  },
+  {
+    "title": "PLAY YOUR TOKENS",
+    "body": "In Inventory → Tokens, PLAY / RESUME opens the free or unfinished round without spending a replay token. After today’s Pairs round or a finished or failed Discovery scene, use the token replay button in that game or Inventory to spend one token and start again. Discovery replays change the current realm’s scenery and clues, with one fresh free hint and an extra completion reward. Pairs replays deal fresh cards with the normal rewards. PLAY on the wheel opens the wheel; tap the wheel or Spin to use an earned spin first, then a token.",
+    "category": "Shops & rewards"
+  },
+  {
+    "title": "WATCH & EARN",
+    "body": "Choose a reward in Watch & Earn: one completed ad gives 1 life, 100 coins, 1 hint, 1 hammer or 1 shuffle. Two completed ads give 1 bomb, 1 lightning, 1 time/moves booster or 1 rainbow. Tap the same reward again for its second ad; the first ad’s progress stays saved for that reward. Only completed ads count toward the reward; closing early gives no reward credit. Each completed reward starts fresh. Lives fill missing hearts first; extra lives are saved. Ads are optional. Ads are offered only to players 18 or over after an age choice remembered on this device. Under-18 players and players who skip the choice can continue without ads. Open Watch & Earn → Ad Privacy Choices to change consent where available, or Privacy Policy in the shop or menu for details. Availability varies by platform and game version. Coming Soon means ads are not enabled in your build. Confirm each ad before it starts. All booster types are available for 1 or 2 ads. Maximum 10 ad starts per local day; resets at midnight. Closing early uses an ad without reward; partial two-ad progress carries over.",
+    "category": "Shops & rewards"
+  }
+]
