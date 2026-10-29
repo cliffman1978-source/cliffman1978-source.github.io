@@ -1,0 +1,527 @@
+[
+  {
+    "id": "find-your-controls",
+    "title": "FIND YOUR CONTROLS",
+    "kind": "CONTROLS",
+    "icon": "book",
+    "caption": "Tap a button; Back returns safely"
+  },
+  {
+    "id": "lives-pause",
+    "title": "LIVES & PAUSE",
+    "kind": "LIFE",
+    "icon": "life",
+    "caption": "Claim a banked life"
+  },
+  {
+    "id": "match-move",
+    "title": "MATCH & MOVE",
+    "kind": "MODE:swap",
+    "icon": "move",
+    "caption": "Watch the move, the match and the clearing gems."
+  },
+  {
+    "id": "ten-puzzle-styles",
+    "title": "TEN PUZZLE STYLES",
+    "kind": "MODE:swap",
+    "icon": "book",
+    "caption": "Watch the move, the match and the clearing gems."
+  },
+  {
+    "id": "your-mission",
+    "title": "YOUR MISSION",
+    "kind": "GOALS",
+    "icon": "goals",
+    "caption": "Complete every marked goal"
+  },
+  {
+    "id": "bloom-gather",
+    "title": "BLOOM GATHER",
+    "kind": "MODE:bloom_groups",
+    "icon": "move",
+    "caption": "Watch the move, the match and the clearing gems."
+  },
+  {
+    "id": "cross-gather",
+    "title": "CROSS GATHER",
+    "kind": "MODE:cross_gather",
+    "icon": "move",
+    "caption": "Watch the move, the match and the clearing gems."
+  },
+  {
+    "id": "diagonal-gather",
+    "title": "DIAGONAL GATHER",
+    "kind": "MODE:diagonal_groups",
+    "icon": "move",
+    "caption": "Watch the move, the match and the clearing gems."
+  },
+  {
+    "id": "diagonal-match",
+    "title": "DIAGONAL MATCH",
+    "kind": "MODE:diagonal_swap",
+    "icon": "move",
+    "caption": "Watch the move, the match and the clearing gems."
+  },
+  {
+    "id": "gather",
+    "title": "GATHER",
+    "kind": "MODE:tap_groups",
+    "icon": "move",
+    "caption": "Watch the move, the match and the clearing gems."
+  },
+  {
+    "id": "match-3",
+    "title": "MATCH 3",
+    "kind": "MODE:swap",
+    "icon": "move",
+    "caption": "Watch the move, the match and the clearing gems."
+  },
+  {
+    "id": "rising-tides",
+    "title": "RISING TIDES",
+    "kind": "MODE:rising_tides",
+    "icon": "move",
+    "caption": "Watch the move, the match and the clearing gems."
+  },
+  {
+    "id": "river-rows",
+    "title": "RIVER ROWS",
+    "kind": "MODE:row_shift",
+    "icon": "move",
+    "caption": "Watch the move, the match and the clearing gems."
+  },
+  {
+    "id": "star-hop",
+    "title": "STAR HOP",
+    "kind": "MODE:star_hop",
+    "icon": "move",
+    "caption": "Watch the move, the match and the clearing gems."
+  },
+  {
+    "id": "wind-columns",
+    "title": "WIND COLUMNS",
+    "kind": "MODE:column_shift",
+    "icon": "move",
+    "caption": "Watch the move, the match and the clearing gems."
+  },
+  {
+    "id": "break-the-ice",
+    "title": "BREAK THE ICE",
+    "kind": "OBSTACLE:6",
+    "icon": "book",
+    "caption": "Match ON ice"
+  },
+  {
+    "id": "combine-powers",
+    "title": "COMBINE POWERS",
+    "kind": "COMBINE",
+    "icon": "lightning",
+    "caption": "Swap two powers together"
+  },
+  {
+    "id": "crack-the-stones",
+    "title": "CRACK THE STONES",
+    "kind": "OBSTACLE:13",
+    "icon": "book",
+    "caption": "Adjacent matches crack stone"
+  },
+  {
+    "id": "cut-the-vines",
+    "title": "CUT THE VINES",
+    "kind": "OBSTACLE:12",
+    "icon": "book",
+    "caption": "Match NEXT TO vines"
+  },
+  {
+    "id": "deliver-story-relics",
+    "title": "DELIVER STORY RELICS",
+    "kind": "RELIC_DIRECTIONS",
+    "icon": "lantern",
+    "caption": "Normal: down · Rising Tides: up"
+  },
+  {
+    "id": "free-reshuffles",
+    "title": "FREE RESHUFFLES",
+    "kind": "SHUFFLE",
+    "icon": "shuffle",
+    "caption": "Mix gems; keep goals"
+  },
+  {
+    "id": "light-the-story-route",
+    "title": "LIGHT THE STORY ROUTE",
+    "kind": "BEACONS",
+    "icon": "book",
+    "caption": "Light the numbered route in order"
+  },
+  {
+    "id": "make-a-bomb",
+    "title": "MAKE A BOMB",
+    "kind": "POWER:BOMB",
+    "icon": "bomb",
+    "caption": "Swap and gather modes create powers in different ways."
+  },
+  {
+    "id": "no-match-penalties",
+    "title": "NO-MATCH PENALTIES",
+    "kind": "PENALTY",
+    "icon": "time",
+    "caption": "Hard or higher: no-match moves cost a turn"
+  },
+  {
+    "id": "open-the-crates",
+    "title": "OPEN THE CRATES",
+    "kind": "OBSTACLE:7",
+    "icon": "book",
+    "caption": "Match NEXT TO crates"
+  },
+  {
+    "id": "rainbow-power",
+    "title": "RAINBOW POWER",
+    "kind": "POWER:RAINBOW",
+    "icon": "rainbow",
+    "caption": "Swap and gather modes create powers in different ways."
+  },
+  {
+    "id": "row-column-powers",
+    "title": "ROW & COLUMN POWERS",
+    "kind": "POWER:ROW",
+    "icon": "lightning",
+    "caption": "Swap and gather modes create powers in different ways."
+  },
+  {
+    "id": "set-off-powers",
+    "title": "SET OFF POWERS",
+    "kind": "FIRE_POWER",
+    "icon": "lightning",
+    "caption": "Watch the example"
+  },
+  {
+    "id": "bomb-booster",
+    "title": "BOMB BOOSTER",
+    "kind": "BOMB",
+    "icon": "bomb",
+    "caption": "Blast a 3 × 3 area"
+  },
+  {
+    "id": "extra-time-or-moves",
+    "title": "EXTRA TIME OR MOVES",
+    "kind": "TIME",
+    "icon": "time",
+    "caption": "+30 seconds / +5 moves"
+  },
+  {
+    "id": "hammer",
+    "title": "HAMMER",
+    "kind": "HAMMER",
+    "icon": "hammer",
+    "caption": "Hit one selected tile"
+  },
+  {
+    "id": "lightning-booster",
+    "title": "LIGHTNING BOOSTER",
+    "kind": "LIGHTNING",
+    "icon": "lightning",
+    "caption": "Clear a row + column"
+  },
+  {
+    "id": "need-a-hint",
+    "title": "NEED A HINT?",
+    "kind": "HINT",
+    "icon": "hint",
+    "caption": "Highlights a move"
+  },
+  {
+    "id": "rainbow-booster",
+    "title": "RAINBOW BOOSTER",
+    "kind": "RAINBOW",
+    "icon": "rainbow",
+    "caption": "Clear one gem color"
+  },
+  {
+    "id": "shuffle",
+    "title": "SHUFFLE",
+    "kind": "SHUFFLE",
+    "icon": "shuffle",
+    "caption": "Mix gems; keep goals"
+  },
+  {
+    "id": "build-your-world",
+    "title": "BUILD YOUR WORLD",
+    "kind": "BUILD",
+    "icon": "book",
+    "caption": "Foundation, framework, then finished landmark"
+  },
+  {
+    "id": "easy-circle",
+    "title": "EASY · CIRCLE",
+    "kind": "DIFFICULTY:0",
+    "icon": "book",
+    "caption": "The same difficulty shapes shown on the map."
+  },
+  {
+    "id": "extreme-hexagon",
+    "title": "EXTREME · HEXAGON",
+    "kind": "DIFFICULTY:3",
+    "icon": "book",
+    "caption": "The same difficulty shapes shown on the map."
+  },
+  {
+    "id": "hard-diamond",
+    "title": "HARD · DIAMOND",
+    "kind": "DIFFICULTY:2",
+    "icon": "book",
+    "caption": "The same difficulty shapes shown on the map."
+  },
+  {
+    "id": "legendary-star",
+    "title": "LEGENDARY · STAR",
+    "kind": "DIFFICULTY:4",
+    "icon": "book",
+    "caption": "The same difficulty shapes shown on the map."
+  },
+  {
+    "id": "map-story",
+    "title": "MAP & STORY",
+    "kind": "MAP",
+    "icon": "book",
+    "caption": "Follow the gold Play button"
+  },
+  {
+    "id": "map-difficulty-key",
+    "title": "MAP DIFFICULTY KEY",
+    "kind": "DIFFICULTY:ALL",
+    "icon": "goals",
+    "caption": "The same difficulty shapes shown on the map."
+  },
+  {
+    "id": "medium-clipped-square",
+    "title": "MEDIUM · CLIPPED SQUARE",
+    "kind": "DIFFICULTY:1",
+    "icon": "book",
+    "caption": "The same difficulty shapes shown on the map."
+  },
+  {
+    "id": "quest-skills",
+    "title": "QUEST SKILLS",
+    "kind": "GOALS",
+    "icon": "book",
+    "caption": "Complete every marked goal"
+  },
+  {
+    "id": "stars-gifts",
+    "title": "STARS & GIFTS",
+    "kind": "RATING",
+    "icon": "gift",
+    "caption": "Improve your best rating for Build Coins"
+  },
+  {
+    "id": "very-easy-flower",
+    "title": "VERY EASY · FLOWER",
+    "kind": "DIFFICULTY:-1",
+    "icon": "book",
+    "caption": "The same difficulty shapes shown on the map."
+  },
+  {
+    "id": "bonus-scatters",
+    "title": "BONUS SCATTERS",
+    "kind": "SLOTS",
+    "icon": "slots",
+    "caption": "Spin; match paylines"
+  },
+  {
+    "id": "daily-discovery",
+    "title": "DAILY DISCOVERY",
+    "kind": "DISCOVERY",
+    "icon": "discovery",
+    "caption": "Find the changed detail"
+  },
+  {
+    "id": "daily-pairs",
+    "title": "DAILY PAIRS",
+    "kind": "PAIRS",
+    "icon": "pairs",
+    "caption": "Reveal matching pairs"
+  },
+  {
+    "id": "earn-wheel-spins",
+    "title": "EARN WHEEL SPINS",
+    "kind": "WHEEL",
+    "icon": "wheel",
+    "caption": "Tap to spin"
+  },
+  {
+    "id": "firefly-flight",
+    "title": "FIREFLY FLIGHT",
+    "kind": "FIREFLY",
+    "icon": "book",
+    "caption": "Rescue to earn • Gust hit: −25% health"
+  },
+  {
+    "id": "prize-wheel",
+    "title": "PRIZE WHEEL",
+    "kind": "WHEEL",
+    "icon": "wheel",
+    "caption": "Tap to spin"
+  },
+  {
+    "id": "treasure-slots",
+    "title": "TREASURE SLOTS",
+    "kind": "SLOTS",
+    "icon": "slots",
+    "caption": "Spin; match paylines"
+  },
+  {
+    "id": "booster-inventory",
+    "title": "BOOSTER INVENTORY",
+    "kind": "HAMMER",
+    "icon": "inventory",
+    "caption": "Hit one selected tile"
+  },
+  {
+    "id": "buy-find-tokens",
+    "title": "BUY & FIND TOKENS",
+    "kind": "TOKEN",
+    "icon": "compass",
+    "caption": "Play / resume; token for replay"
+  },
+  {
+    "id": "pip-s-coin-shop",
+    "title": "PIP’S COIN SHOP",
+    "kind": "SHOP",
+    "icon": "coin_shop",
+    "caption": "Check the price before confirming"
+  },
+  {
+    "id": "pip-s-market-place",
+    "title": "PIP’S MARKET PLACE",
+    "kind": "SHOP",
+    "icon": "store",
+    "caption": "Check the price before confirming"
+  },
+  {
+    "id": "play-your-tokens",
+    "title": "PLAY YOUR TOKENS",
+    "kind": "TOKEN",
+    "icon": "book",
+    "caption": "Play / resume; token for replay"
+  },
+  {
+    "id": "watch-earn",
+    "title": "WATCH & EARN",
+    "kind": "GIFT",
+    "icon": "gift",
+    "caption": "Claim your earned reward"
+  },
+  {
+    "id": "navigation-worlds",
+    "title": "EXPLORE YOUR WORLD MAP",
+    "kind": "MAP",
+    "icon": "compass",
+    "caption": "Find this activity from the in-game menu."
+  },
+  {
+    "id": "navigation-resume",
+    "title": "PLAY & UNDERSTAND GOALS",
+    "kind": "GOALS",
+    "icon": "compass",
+    "caption": "Find this activity from the in-game menu."
+  },
+  {
+    "id": "navigation-build",
+    "title": "BUILD & FOLLOW THE STORY",
+    "kind": "BUILD",
+    "icon": "hammer",
+    "caption": "Find this activity from the in-game menu."
+  },
+  {
+    "id": "navigation-journal",
+    "title": "READ PIP'S JOURNAL",
+    "kind": "JOURNAL",
+    "icon": "book",
+    "caption": "Read the story at your own pace."
+  },
+  {
+    "id": "navigation-sidequests",
+    "title": "WORLD & DAILY QUESTS",
+    "kind": "GOALS",
+    "icon": "book",
+    "caption": "Find this activity from the in-game menu."
+  },
+  {
+    "id": "navigation-open-wheel",
+    "title": "SPIN THE PRIZE WHEEL",
+    "kind": "WHEEL",
+    "icon": "wheel",
+    "caption": "Find this activity from the in-game menu."
+  },
+  {
+    "id": "navigation-open-slots",
+    "title": "PLAY TREASURE SLOTS",
+    "kind": "SLOTS",
+    "icon": "slots",
+    "caption": "Find this activity from the in-game menu."
+  },
+  {
+    "id": "navigation-open-discovery",
+    "title": "EXPLORE DISCOVERY",
+    "kind": "DISCOVERY",
+    "icon": "discovery",
+    "caption": "Find this activity from the in-game menu."
+  },
+  {
+    "id": "navigation-daily-match",
+    "title": "MASTER DAILY PAIRS",
+    "kind": "PAIRS",
+    "icon": "pairs",
+    "caption": "Find this activity from the in-game menu."
+  },
+  {
+    "id": "navigation-shop",
+    "title": "SPEND EARNED COINS",
+    "kind": "SHOP",
+    "icon": "coin_shop",
+    "caption": "Find this activity from the in-game menu."
+  },
+  {
+    "id": "navigation-commerce",
+    "title": "EXPLORE THE MARKET PLACE",
+    "kind": "SHOP",
+    "icon": "store",
+    "caption": "Find this activity from the in-game menu."
+  },
+  {
+    "id": "navigation-inventory",
+    "title": "FIND YOUR SAVED ITEMS",
+    "kind": "INVENTORY",
+    "icon": "inventory",
+    "caption": "Boosters & Lives · Tokens"
+  },
+  {
+    "id": "navigation-watch-earn",
+    "title": "WATCH & EARN",
+    "kind": "GIFT",
+    "icon": "watch",
+    "caption": "Find this activity from the in-game menu."
+  },
+  {
+    "id": "navigation-lives",
+    "title": "CHECK LIVES & REFILLS",
+    "kind": "LIFE",
+    "icon": "life",
+    "caption": "Find this activity from the in-game menu."
+  },
+  {
+    "id": "navigation-daily",
+    "title": "CLAIM YOUR DAILY GIFT",
+    "kind": "DAILY",
+    "icon": "gift",
+    "caption": "One free gift per local calendar day."
+  },
+  {
+    "id": "navigation-settings",
+    "title": "SET MUSIC & SOUND",
+    "kind": "SETTINGS",
+    "icon": "settings",
+    "caption": "Adjust music and effects separately."
+  }
+]

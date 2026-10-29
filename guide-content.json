@@ -293,5 +293,85 @@
     "title": "WATCH & EARN",
     "body": "Choose a reward in Watch & Earn: one completed ad gives 1 life, 100 coins, 1 hint, 1 hammer or 1 shuffle. Two completed ads give 1 bomb, 1 lightning, 1 time/moves booster or 1 rainbow. Tap the same reward again for its second ad; the first ad’s progress stays saved for that reward. Only completed ads count toward the reward; closing early gives no reward credit. Each completed reward starts fresh. Lives fill missing hearts first; extra lives are saved. Ads are optional. Ads are offered only to players 18 or over after an age choice remembered on this device. Under-18 players and players who skip the choice can continue without ads. Open Watch & Earn → Ad Privacy Choices to change consent where available, or Privacy Policy in the shop or menu for details. Availability varies by platform and game version. Coming Soon means ads are not enabled in your build. Confirm each ad before it starts. All booster types are available for 1 or 2 ads. Maximum 10 ad starts per local day; resets at midnight. Closing early uses an ad without reward; partial two-ad progress carries over.",
     "category": "Shops & rewards"
+  },
+  {
+    "title": "EXPLORE YOUR WORLD MAP",
+    "body": "Your map connects the 50 realms, level trail and restored buildings. Drag to explore, pinch to zoom, and use Find Pip to return to your current place. Locked paths open as you progress.",
+    "category": "Navigation guide"
+  },
+  {
+    "title": "PLAY & UNDERSTAND GOALS",
+    "body": "Play opens your current puzzle. The starting card explains its controls, collection targets and moves or timer. Finish every goal to win; the difficulty badge describes the challenge.",
+    "category": "Navigation guide"
+  },
+  {
+    "title": "BUILD & FOLLOW THE STORY",
+    "body": "Win puzzles to earn Build Coins, then restore the next stage of a world project. Each repair advances its keeper's story. Tap a building on My Map to focus on its actual parcel. The dock shows its three saved stages, cost and purpose. Build there, watch it assemble, then close the dock to explore the same map.",
+    "category": "Navigation guide"
+  },
+  {
+    "title": "READ PIP'S JOURNAL",
+    "body": "Read the current realm's chapters and conversations. Earlier unlocked chapters stay available. Use the reading controls to follow the story at your own pace.",
+    "category": "Navigation guide"
+  },
+  {
+    "title": "WORLD & DAILY QUESTS",
+    "body": "World quests track this visit; daily quests rotate at local midnight. Complete a card's goal, then tap Claim Reward to collect its coins or booster and wheel spins.",
+    "category": "Navigation guide"
+  },
+  {
+    "title": "SPIN THE PRIZE WHEEL",
+    "body": "Use an earned spin first, then a saved wheel token. Every spin wins one of 12 equally likely prizes. The top pointer identifies the result. Tap Rules for exact prizes.",
+    "category": "Navigation guide"
+  },
+  {
+    "title": "PLAY TREASURE SLOTS",
+    "body": "Choose a coin stake before tapping Spin. Five paylines, Wilds and Bonus scatters determine the prize. Bonus rounds preserve their progress. Firefly Flight: rescue to earn; gust hits cost 25% bonus health. At zero health, keep only earned prizes. The pay table explains every reward.",
+    "category": "Navigation guide"
+  },
+  {
+    "title": "EXPLORE DISCOVERY",
+    "body": "Compare two pictures and tap eight changed details in either image. Pinch to zoom and drag to inspect. The first hint is free; later hints cost 50 coins. A finished or failed round can use a replay token.",
+    "category": "Navigation guide"
+  },
+  {
+    "title": "MASTER DAILY PAIRS",
+    "body": "New rounds have 20 cards: find 10 matching pairs. Revealing two cards uses one move. A rainbow needs 12 moves or fewer; 13–20 earns a hammer, 21–30 earns 150 coins, and 31+ earns 75. Saved six-pair rounds keep their original rules.",
+    "category": "Navigation guide"
+  },
+  {
+    "title": "SPEND EARNED COINS",
+    "body": "Pip's Coin Shop uses coins earned through play. Buy boosters or replay tokens here. The Market Place is the separate real-money store.",
+    "category": "Navigation guide"
+  },
+  {
+    "title": "EXPLORE THE MARKET PLACE",
+    "body": "Browse coin packs, booster bundles and token packs. Native store confirmation shows the purchase price before payment.",
+    "category": "Navigation guide"
+  },
+  {
+    "title": "FIND YOUR SAVED ITEMS",
+    "body": "Inventory opens Boosters & Lives first, showing each item and its quantity. The Tokens tab holds your bonus-game replays. Use boosters from the puzzle controls.",
+    "category": "Navigation guide"
+  },
+  {
+    "title": "WATCH & EARN",
+    "body": "Choose any booster, coins or a life and confirm before watching 1 or 2 ads. At most 10 ad starts per local day, resetting at midnight. Closing early uses an ad but gives no credit. Partial two-ad progress stays saved. Ads depend on availability and eligibility.",
+    "category": "Navigation guide"
+  },
+  {
+    "title": "CHECK LIVES & REFILLS",
+    "body": "Hearts let you enter puzzles. Check the refill countdown or use a saved life when a heart is missing. Bonus games explain their own entry rules.",
+    "category": "Navigation guide"
+  },
+  {
+    "title": "CLAIM YOUR DAILY GIFT",
+    "body": "Open the daily gift to see today's free reward and tomorrow's preview. Claim it once per local calendar day.",
+    "category": "Navigation guide"
+  },
+  {
+    "title": "SET MUSIC & SOUND",
+    "body": "Adjust music and effects separately. Your choices stay saved on this device. The pause and back controls let you leave a screen without losing saved progress.",
+    "category": "Navigation guide"
   }
 ]
