@@ -26,52 +26,52 @@
   },
   {
     "title": "BLOOM GATHER",
-    "body": "Tap 3+ same-color gems connected by edges. Pairs do not clear. Falling joins of 3+ cascade free. Entirely fresh groups wait for your next tap. Larger groups grow bonus powers.",
+    "body": "Tap 3+ same-colour gems touching up, down, left or right. Pairs do not clear. No swapping or diagonals. Groups can turn corners along shared edges. After gems fall, new connections involving gems already on the board can clear automatically without another move. Groups made entirely of new refill gems wait for your next tap. Groups of 5–6 make a row power, 7–8 a bomb, and 9+ a rainbow. Tap a power to activate it.",
     "category": "Puzzle styles"
   },
   {
     "title": "CROSS GATHER",
-    "body": "Tap a gem to clear 2+ same-color gems in straight rays from it. Rays stop at another color or gap; they cannot turn. Falling joins cascade free. Entirely fresh groups wait for your next tap.",
+    "body": "Tap a gem: clear 2+ of its colour in straight lines up/down/left/right. No turns. The tapped gem counts toward the total. Each line stops at a different colour, gap or blocker. Lines cannot turn corners or go diagonally. After gems fall, new connections involving gems already on the board can clear automatically without another move. Groups made entirely of new refill gems wait for your next tap. Groups of 5–6 make a row power, 7–8 a bomb, and 9+ a rainbow. Tap a power to activate it.",
     "category": "Puzzle styles"
   },
   {
     "title": "DIAGONAL GATHER",
-    "body": "Tap 2+ same-color gems connected by edges OR corners. Falling joins cascade free. Entirely fresh groups wait for your next tap.",
+    "body": "Tap 2+ same-colour gems touching by an edge OR a corner. No swapping. The whole connected group clears, including diagonal connections. After gems fall, new connections involving gems already on the board can clear automatically without another move. Groups made entirely of new refill gems wait for your next tap. Groups of 5–6 make a row power, 7–8 a bomb, and 9+ a rainbow. Tap a power to activate it.",
     "category": "Puzzle styles"
   },
   {
     "title": "DIAGONAL MATCH",
-    "body": "Swap any neighboring gems, including diagonally. Make a straight row or column of 3+.",
+    "body": "Swap neighbours, including diagonally. Make a row or column of 3+ matching gems. Swipe between neighbouring gems, or tap one and then the other. You may swap diagonally, but a diagonal line does not count as a match.",
     "category": "Puzzle styles"
   },
   {
     "title": "GATHER",
-    "body": "Tap 2+ same-color gems touching up, down, left or right. No swapping or diagonals. Falling joins cascade free. Entirely fresh groups wait for your next tap.",
+    "body": "Tap 2+ same-colour gems touching up, down, left or right. No swapping or diagonals. Tap any gem in the connected group to clear it. Groups can turn corners along shared edges. After gems fall, new connections involving gems already on the board can clear automatically without another move. Groups made entirely of new refill gems wait for your next tap. Groups of 5–6 make a row power, 7–8 a bomb, and 9+ a rainbow. Tap a power to activate it.",
     "category": "Puzzle styles"
   },
   {
     "title": "MATCH 3",
-    "body": "Swap neighboring gems up, down, left or right to make a row or column of 3+.",
+    "body": "Swap up, down, left or right. Make a row or column of 3+ matching gems. Swipe between neighbouring gems, or tap one and then the other. Diagonal swaps and diagonal matches do not count. A swap that makes no match moves back.",
     "category": "Puzzle styles"
   },
   {
     "title": "RISING TIDES",
-    "body": "Match 3; gems rise and refill from below. Deliver relics to the TOP arrows.",
+    "body": "Swap to match 3+ in a row or column. Gems rise; deliver relics to the TOP arrows. Swap neighbouring gems up, down, left or right. Gems refill from below. Clear ABOVE a relic to lift it to the top exit.",
     "category": "Puzzle styles"
   },
   {
     "title": "RIVER ROWS",
-    "body": "Swipe left/right, or tap two horizontal neighbors. The connected row shifts one space and wraps at its ends. Make a line of 3+. Gaps and blockers stop the row. Tap a power to activate it, or shift its row to fire it. Powers do not need another match.",
+    "body": "Shift a row one space left or right. Make a row or column of 3+ matching gems. Swipe left or right, or tap two horizontal neighbours. The connected row wraps at its ends; gaps and blockers stop the segment. Tap a power to fire it, or shift its row to fire it. A shift with no match or power moves back.",
     "category": "Puzzle styles"
   },
   {
     "title": "STAR HOP",
-    "body": "Tap a gem, then a destination two squares across and one up/down, or two up/down and one across. Drag between them also works. Make a straight line of 3+.",
+    "body": "Swap in an L: two squares, then one sideways. Make a row or column of 3+ matching gems. Tap a gem, then its destination, or drag between them. The destination is two squares across and one up/down, or two up/down and one across. Only the two endpoint gems swap; the gems between them stay put.",
     "category": "Puzzle styles"
   },
   {
     "title": "WIND COLUMNS",
-    "body": "Swipe up/down, or tap two vertical neighbors. The connected column shifts one space and wraps at its ends. Make a line of 3+. Gaps and blockers stop the column. Tap a power to activate it, or shift its column to fire it. Powers do not need another match.",
+    "body": "Shift a column one space up or down. Make a row or column of 3+ matching gems. Swipe up or down, or tap two vertical neighbours. The connected column wraps at its ends; gaps and blockers stop the segment. Tap a power to fire it, or shift its column to fire it. A shift with no match or power moves back.",
     "category": "Puzzle styles"
   },
   {

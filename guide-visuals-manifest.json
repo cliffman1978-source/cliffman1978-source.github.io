@@ -39,70 +39,70 @@
     "title": "BLOOM GATHER",
     "kind": "MODE:bloom_groups",
     "icon": "move",
-    "caption": "Watch the move, the match and the clearing gems."
+    "caption": "Tap all three connected gems in the L-shaped group."
   },
   {
     "id": "cross-gather",
     "title": "CROSS GATHER",
     "kind": "MODE:cross_gather",
     "icon": "move",
-    "caption": "Watch the move, the match and the clearing gems."
+    "caption": "Tap the centre: straight lines clear; the matching corner stays."
   },
   {
     "id": "diagonal-gather",
     "title": "DIAGONAL GATHER",
     "kind": "MODE:diagonal_groups",
     "icon": "move",
-    "caption": "Watch the move, the match and the clearing gems."
+    "caption": "Tap the pair connected diagonally; both gems clear."
   },
   {
     "id": "diagonal-match",
     "title": "DIAGONAL MATCH",
     "kind": "MODE:diagonal_swap",
     "icon": "move",
-    "caption": "Watch the move, the match and the clearing gems."
+    "caption": "Swap diagonally to make a horizontal row of three."
   },
   {
     "id": "gather",
     "title": "GATHER",
     "kind": "MODE:tap_groups",
     "icon": "move",
-    "caption": "Watch the move, the match and the clearing gems."
+    "caption": "Tap the pair; both touching gems clear."
   },
   {
     "id": "match-3",
     "title": "MATCH 3",
     "kind": "MODE:swap",
     "icon": "move",
-    "caption": "Watch the move, the match and the clearing gems."
+    "caption": "Swap up to make a row of three."
   },
   {
     "id": "rising-tides",
     "title": "RISING TIDES",
     "kind": "MODE:rising_tides",
     "icon": "move",
-    "caption": "Watch the move, the match and the clearing gems."
+    "caption": "Make a row of three; gems rise and refill from below."
   },
   {
     "id": "river-rows",
     "title": "RIVER ROWS",
     "kind": "MODE:row_shift",
     "icon": "move",
-    "caption": "Watch the move, the match and the clearing gems."
+    "caption": "Swipe one space left; the row wraps and makes a column of three."
   },
   {
     "id": "star-hop",
     "title": "STAR HOP",
     "kind": "MODE:star_hop",
     "icon": "move",
-    "caption": "Watch the move, the match and the clearing gems."
+    "caption": "Swap the two endpoints of the L to make a row of three."
   },
   {
     "id": "wind-columns",
     "title": "WIND COLUMNS",
     "kind": "MODE:column_shift",
     "icon": "move",
-    "caption": "Watch the move, the match and the clearing gems."
+    "caption": "Swipe one space up; the column wraps and makes a row of three."
   },
   {
     "id": "break-the-ice",
