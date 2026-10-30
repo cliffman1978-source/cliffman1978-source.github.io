@@ -523,5 +523,26 @@
     "kind": "SETTINGS",
     "icon": "settings",
     "caption": "Adjust music and effects separately."
+  },
+  {
+    "id": "save-status",
+    "title": "SAVE STATUS",
+    "kind": "",
+    "icon": "book",
+    "caption": ""
+  },
+  {
+    "id": "choose-your-progress",
+    "title": "CHOOSE YOUR PROGRESS",
+    "kind": "",
+    "icon": "book",
+    "caption": ""
+  },
+  {
+    "id": "game-updates",
+    "title": "GAME UPDATES",
+    "kind": "",
+    "icon": "book",
+    "caption": ""
   }
 ]

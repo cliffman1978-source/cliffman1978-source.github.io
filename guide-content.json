@@ -16,7 +16,7 @@
   },
   {
     "title": "TEN PUZZLE STYLES",
-    "body": "Ten puzzle styles change how you move and clear gems. Choose Puzzle styles above to read each set of controls. Check your level briefing for the active style; the in-game Field Guide also includes animated demonstrations. All ten styles rotate from the second world onward.",
+    "body": "Each puzzle-style card explains its controls and shows an animated example. Check your level briefing for the active style. Examples repeat without spending moves or lives. All ten styles rotate from the second world onward.",
     "category": "Getting started"
   },
   {
@@ -116,7 +116,7 @@
   },
   {
     "title": "NO-MATCH PENALTIES",
-    "body": "Hard, Extreme and Legendary: a swap without a match or a group below the required size costs 1 move or 3 seconds. Blocked swaps and selection taps cost nothing. Lower tiers have no penalty.",
+    "body": "Hard, Extreme and Legendary: a swap or line shift without a match or activated power, or a group below the required size, costs 1 move or 3 seconds. Blocked swaps and selection taps cost nothing. Lower tiers have no penalty.",
     "category": "Puzzle rules"
   },
   {
@@ -276,12 +276,12 @@
   },
   {
     "title": "PIP’S COIN SHOP",
-    "body": "Choose Boosters, Tokens or Lives directly below the store tabs. Spend earned coins on hints, hearts, boosters and saved game tokens. Tap an item and confirm its coin price. A Purchase Complete celebration confirms the item was saved; tap Continue to return to the shop. This section never charges real money. Use the bottom navigation to switch between the shop, Inventory and Watch & Earn. Market Place is separate and contains real-money purchases.",
+    "body": "Choose Boosters, Tokens or Lives directly below the store tabs. Spend earned coins on hints, hearts, boosters and saved game tokens. Tap an item and confirm its coin price. A Purchase Complete celebration confirms the item was saved; tap Continue to return to the shop. This section never charges real money. Use the bottom navigation to switch between Coin Shop, Inventory and Watch & Earn. Market Place is separate and contains real-money purchases.",
     "category": "Shops & rewards"
   },
   {
     "title": "PIP’S MARKET PLACE",
-    "body": "Buy coin packs, booster bundles, hearts and token packs with real money. Choose Coin Packs, Booster Bundles or Token Packs. Use the bottom navigation to switch between the shop, Inventory and Watch & Earn. Items bought with earned coins are in the separate Coin Shop. Tap an available pack to review and confirm the store purchase. The store shows your local currency and final price. Preview or unavailable packs cannot be bought. A Purchase Complete celebration lists the exact items after successful delivery and saving. Check Purchases retries unfinished transactions; spent consumables are not restored. Read Terms & Conditions from the store footer or Menu → Settings.",
+    "body": "Buy coin packs, booster bundles, hearts and token packs with real money. Choose Coin Packs, Booster Bundles or Token Packs. Use the bottom navigation to switch between Market Place, Inventory and Watch & Earn. Items bought with earned coins are in the separate Coin Shop. Tap an available pack to review and confirm the store purchase. The store shows your local currency and final price. Preview or unavailable packs cannot be bought. A Purchase Complete celebration lists the exact items after successful delivery and saving. Check Purchases retries unfinished transactions; spent consumables are not restored. Read Terms & Conditions from the store footer or Menu → Settings.",
     "category": "Shops & rewards"
   },
   {
@@ -373,5 +373,20 @@
     "title": "SET MUSIC & SOUND",
     "body": "Adjust music and effects separately. Your choices stay saved on this device. The pause and back controls let you leave a screen without losing saved progress.",
     "category": "Navigation guide"
+  },
+  {
+    "title": "SAVE STATUS",
+    "body": "Open Menu → Settings → Save Status. Progress saves on this device automatically. On Android, Google Play Games also backs up when your profile and the service are available; no separate game account is needed. Use the same Play Games profile on a replacement Android device. Check the status before switching devices. Backups can be delayed while offline or when the service is unavailable. Apple/iCloud saving and Android-to-iPhone transfer are not included.",
+    "category": "Getting started"
+  },
+  {
+    "title": "CHOOSE YOUR PROGRESS",
+    "body": "When a different Google Play save is found, compare the level and coin balance shown for each option. Use Google Play Save replaces progress on this device and keeps a local recovery copy. Keep Current Progress preserves this device’s progress and enables its automatic backups. The two saves are not merged. Choose one option to continue.",
+    "category": "Getting started"
+  },
+  {
+    "title": "GAME UPDATES",
+    "body": "When an update is required, tap Google Play on the update screen, install the update, then return to Pip’s Adventure. If the update is still required, check your internet connection and try Google Play again. Updating the installed game keeps its saved progress. Contact support before uninstalling or clearing app data.",
+    "category": "Getting started"
   }
 ]
