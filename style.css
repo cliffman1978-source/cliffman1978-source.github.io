@@ -18,18 +18,27 @@
 @media(max-width:640px){.header .play-badge{display:none}.guide-demo{padding:9px;margin-bottom:20px}.lesson-icon{width:43px;height:43px;flex-basis:43px}.lesson summary{gap:10px}.guide-demo figcaption{font-size:13px}.demo-controls span{width:100%;text-align:center}.demo-controls button{font-size:12px;padding:9px 12px}.actions .play-badge img{width:220px}}
 @media(prefers-reduced-motion:reduce){.play-badge{transition:none}}
 
-.journey-films h2{margin:0 0 24px}
-.film-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:24px;align-items:start}
-.film,.journal-strip figure{margin:0;min-width:0}
-.film video{display:block;width:100%;height:auto;border-radius:14px;background:#173e37}
-.film figcaption{padding:8px 2px}
-.film h3,.journal-title{font-family:Georgia,serif;color:var(--ink)}
-.film h3{margin:0;font-size:clamp(1.25rem,2.5vw,1.6rem);line-height:1.3}
-.film p{margin:3px 0 0;color:var(--muted)}
-.film-firefly-flight{grid-column:2;grid-row:1/span 2}
+.journal-strip figure{margin:0;min-width:0}
 .journal-title{margin:38px 0 12px;font-size:1.55rem}
 .journal-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 .journal-strip img{width:100%;border-radius:10px}
 .journal-strip figcaption{font:600 1rem/1.45 Georgia,serif;margin-top:7px}
-@media(max-width:680px){.film-grid{grid-template-columns:1fr;gap:20px}.film-firefly-flight{grid-column:auto;grid-row:auto}.film-firefly-flight video{max-height:65vh;object-fit:contain}.journal-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.journal-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:680px){.header nav{flex-wrap:wrap}}
+
+.puzzle-workshop h2{margin:0}
+#puzzle-practice{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1rem,4vw,3rem);align-items:start;background:#edf2e4;padding:clamp(16px,3vw,36px);border-radius:20px}
+.practice-copy label{display:block;font-weight:700}
+.practice-copy select{font:inherit;width:100%;max-width:24rem;padding:8px;border-radius:8px}
+.puzzle-workshop audio{display:block;width:100%;max-width:24rem;margin:8px 0 16px}
+.practice-board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;max-width:330px;padding:8px;border-radius:12px;background:#22463e}
+.practice-board button{border:2px solid transparent;border-radius:8px;background:#fff9e9;aspect-ratio:1;font:bold clamp(1.5rem,5vw,2.5rem)/1 Georgia,serif;min-height:44px}
+.practice-board button[data-gem="0"]{color:#215fa2}.practice-board button[data-gem="1"]{color:#ae2446}.practice-board button[data-gem="2"]{color:#247340}.practice-board button[data-gem="3"]{color:#926214}.practice-board button[data-gem="4"]{color:#693c97}
+.practice-board button.target{border-radius:50%;border-color:#bd831d}
+.practice-board button.chosen,.practice-board button.hinted{box-shadow:inset 0 0 0 3px #27697a}
+.practice-board button.hit{background:#cef1cd;border-color:#397b49}
+.practice-play [role=status]{min-height:3em;margin:10px 0}.practice-actions{display:flex;gap:.5rem;flex-wrap:wrap}.practice-actions button{padding:8px 16px;border-radius:20px;background:white;border:1px solid #779888;color:#18483e}
+.practice-notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.practice-notes h4{font:bold 1.3rem Georgia,serif;margin:0}.practice-notes p{margin:.5em 0}
+@media(max-width:720px){#puzzle-practice,.practice-notes{grid-template-columns:1fr}.practice-board{margin:auto}.practice-copy p{margin:.6em 0}}
+
+.lesson-body audio{display:block;max-width:100%;margin:.75rem 0}
