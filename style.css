@@ -42,3 +42,19 @@
 @media(max-width:720px){#puzzle-practice,.practice-notes{grid-template-columns:1fr}.practice-board{margin:auto}.practice-copy p{margin:.6em 0}}
 
 .lesson-body audio{display:block;max-width:100%;margin:.75rem 0}
+
+.practice-board{background:#294f67;gap:4px;position:relative}
+.practice-board button{padding:4px;display:grid;place-items:center;position:relative;overflow:visible;background:linear-gradient(#709db0,#466e84);border-color:#91bac5;box-shadow:inset 0 -3px 0 #32526a}
+.practice-gem{display:block;width:90%;aspect-ratio:1;background:url('assets/workshop/sunflower-gems.webp') left center / 500% 100% no-repeat;filter:drop-shadow(0 3px 1px #112a4380);pointer-events:none}
+.practice-board [data-gem="1"] .practice-gem{background-position-x:25%}.practice-board [data-gem="2"] .practice-gem{background-position-x:50%}.practice-board [data-gem="3"] .practice-gem{background-position-x:75%}.practice-board [data-gem="4"] .practice-gem{background-position-x:100%}
+.practice-board button.target{outline:3px solid #ffcf51;outline-offset:-5px}
+.practice-board button.chosen,.practice-board button.hinted{box-shadow:inset 0 0 0 3px white}
+.practice-board button.hit{background:#8fbbab;border-color:#ffdd79}
+.practice-board .hit::after{content:'';position:absolute;inset:7%;border:3px solid #fff2ad;border-radius:50%;opacity:0;pointer-events:none}
+.practice-speech{display:flex;flex-wrap:wrap;gap:8px}.practice-speech button{border:1px solid #698a79;border-radius:24px;padding:7px 16px;color:#18483e;background:#fffdf4}.practice-speech [aria-pressed="true"]{background:#175c50;color:white}
+@media(prefers-reduced-motion:no-preference){
+ .practice-board .chosen .practice-gem,.practice-board .hinted .practice-gem{animation:gem-lift .48s ease-out}
+ .practice-board .hit::after{animation:match-ring .55s .36s ease-out both}
+ @keyframes gem-lift{50%{transform:translateY(-4%) scale(1.12)}}
+ @keyframes match-ring{0%{transform:scale(.55);opacity:0}25%{opacity:1}100%{transform:scale(1.22);opacity:0}}
+}
