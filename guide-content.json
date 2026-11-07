@@ -1,7 +1,7 @@
 [
   {
     "title": "FIND YOUR CONTROLS",
-    "body": "Open Menu → Settings → Volume Controls to adjust music and effects separately. Menu → Guides opens the Field Guide; Bonus and Shop & Items group games and supplies. Gentle upbeat music varies by world and activity, with three arrangements across each world’s puzzle progress; warning cues become more urgent with 20 seconds or 5 moves left, and again at 7 seconds or 2 moves. Watch the counters even when sound is muted. Use Pause during a puzzle; My Map and Quests remain in the bottom navigation between levels.",
+    "body": "Open Menu → Settings → Volume Controls to adjust music and effects or turn Voice on or off. When guidance is muted, tap the voice button at the top of the screen to hear the current directions again. Menu → Guides opens the Field Guide; Bonus and Shop & Items group games and supplies. Gentle upbeat music varies by world and activity, with three arrangements across each world’s puzzle progress; warning cues become more urgent with 20 seconds or 5 moves left, and again at 7 seconds or 2 moves. Watch the counters even when sound is muted. Use Pause during a puzzle; My Map and Quests remain in the bottom navigation between levels.",
     "category": "Getting started"
   },
   {
@@ -66,7 +66,7 @@
   },
   {
     "title": "STAR HOP",
-    "body": "Swap in an L: two squares, then one sideways. Make a row or column of 3+ matching gems. Tap a gem, then its destination, or drag between them. The destination is two squares across and one up/down, or two up/down and one across. Only the two endpoint gems swap; the gems between them stay put.",
+    "body": "Tap a gem, then a gold-ringed gem to swap them. Line up 3 of one colour in a row or column. The two gems swap places in an L: two spaces across and one up or down, or two up or down and one across. Either end can complete the line. A hop with a power gem activates it.",
     "category": "Puzzle styles"
   },
   {
@@ -201,7 +201,7 @@
   },
   {
     "title": "MAP & STORY",
-    "body": "Open Menu → Worlds → My World Map to explore all 50 realms. My Map returns to your current town; Quests opens your tasks and unclaimed rewards. Return missions bring new story chapters every five levels.",
+    "body": "Open Menu → Worlds → My World Map to explore all 50 realms. My Map returns to your current town; Quests opens your tasks and unclaimed rewards. At the welcome screen, continue your journey or open the map. In the journal, Choose a route shows four destinations for a five-level chapter. Two are free. The other two cost different amounts of gold. Your saved route sets the story and puzzle realm for those levels. Your ending changes the places offered next chapter.",
     "category": "Worlds & quests"
   },
   {
@@ -266,7 +266,7 @@
   },
   {
     "title": "BOOSTER INVENTORY",
-    "body": "Open Inventory, then Boosters & Lives to see your saved boosters and lives in a compact grid. Each tile shows its item and quantity. Use boosters with the booster buttons during a puzzle. When hearts are missing, tap USE SAVED LIFE in the Lives & Refills or out-of-lives popup to claim a banked life. Buy more using earned coins in Pip’s Coin Shop or real money in Pip’s Market Place.",
+    "body": "Open Inventory, then Boosters & Lives to see your saved boosters and lives in a compact grid. Each tile shows its item and quantity. During a puzzle, select a booster to see what it does. If you buy one with coins, check the item and price before confirming. With Voice on, the guide describes the selected booster. When hearts are missing, tap USE SAVED LIFE in the Lives & Refills or out-of-lives popup to claim a banked life. Buy more using earned coins in Pip’s Coin Shop or real money in Pip’s Market Place.",
     "category": "Shops & rewards"
   },
   {
@@ -291,7 +291,7 @@
   },
   {
     "title": "WATCH & EARN",
-    "body": "Choose a reward in Watch & Earn: one completed ad gives 1 life, 100 coins, 1 hint, 1 hammer or 1 shuffle. Two completed ads give 1 bomb, 1 lightning, 1 time/moves booster or 1 rainbow. Tap the same reward again for its second ad; the first ad’s progress stays saved for that reward. Only completed ads count toward the reward; closing early gives no reward credit. Each completed reward starts fresh. Lives fill missing hearts first; extra lives are saved. Ads are optional. Ads are offered only to players 18 or over after an age choice remembered on this device. Under-18 players and players who skip the choice can continue without ads. Open Watch & Earn → Ad Privacy Choices to change consent where available, or Privacy Policy in the shop or menu for details. Availability varies by platform and game version. Coming Soon means ads are not enabled in your build. Confirm each ad before it starts. All booster types are available for 1 or 2 ads. Maximum 10 ad starts per local day; resets at midnight. Closing early uses an ad without reward; partial two-ad progress carries over.",
+    "body": "Tap WATCH & EARN beside Coin Shop and Market Place at the bottom of My Map or the level trail. Choose a reward in Watch & Earn: one completed ad gives 1 life, 100 coins, 1 hint, 1 hammer or 1 shuffle. Two completed ads give 1 bomb, 1 lightning, 1 time/moves booster or 1 rainbow. Tap the same reward again for its second ad; the first ad’s progress stays saved for that reward. Only completed ads count toward the reward; closing early gives no reward credit. Each completed reward starts fresh. Lives fill missing hearts first; extra lives are saved. Ads are optional. Ads are offered only to players 18 or over after an age choice remembered on this device. Under-18 players and players who skip the choice can continue without ads. Open Watch & Earn → Ad Privacy Choices to change consent where available, or Privacy Policy in the shop or menu for details. Availability varies by platform and game version. Coming Soon means ads are not enabled in your build. Confirm each ad before it starts. All booster types are available for 1 or 2 ads. Maximum 10 ad starts per local day; resets at midnight. Closing early uses an ad without reward; partial two-ad progress carries over.",
     "category": "Shops & rewards"
   },
   {
@@ -306,12 +306,12 @@
   },
   {
     "title": "BUILD & FOLLOW THE STORY",
-    "body": "Win puzzles to earn Build Coins, then restore the next stage of a world project. Each repair advances its keeper's story. Tap a building on My Map to focus on its actual parcel. The dock shows its three saved stages, cost and purpose. Build there, watch it assemble, then close the dock to explore the same map.",
+    "body": "Win puzzles to earn Build Coins, then restore the next stage of a world project. Your chapter route supplies relic designs for the project. Choose a design for each stage and look for your placed relic at the worksite. Tap a building on My Map to focus on its actual parcel. The dock shows its three saved stages, cost and purpose. Build there, watch it assemble, then close the dock to explore the same map.",
     "category": "Navigation guide"
   },
   {
     "title": "READ PIP'S JOURNAL",
-    "body": "Read the current realm's chapters and conversations. Earlier unlocked chapters stay available. Use the reading controls to follow the story at your own pace.",
+    "body": "Read the current realm's chapters and conversations. Earlier unlocked chapters stay available. Listen to the scene, pause, or skip ahead to Choose a route. Compare the destinations and gold fares before choosing. Open Chapter notes to revisit what happened.",
     "category": "Navigation guide"
   },
   {
@@ -371,7 +371,7 @@
   },
   {
     "title": "SET MUSIC & SOUND",
-    "body": "Adjust music and effects separately. Your choices stay saved on this device. The pause and back controls let you leave a screen without losing saved progress.",
+    "body": "Open Volume Controls for music, effects and the Voice switch. Tap the voice button on a guide bar to turn spoken guidance back on. Your choices stay saved on this device. The pause and back controls let you leave a screen without losing saved progress.",
     "category": "Navigation guide"
   },
   {

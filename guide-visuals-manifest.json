@@ -95,7 +95,7 @@
     "title": "STAR HOP",
     "kind": "MODE:star_hop",
     "icon": "move",
-    "caption": "Swap the two endpoints of the L to make a row of three."
+    "caption": "Tap the two ends of the L. Watch the three matching gems line up."
   },
   {
     "id": "wind-columns",
