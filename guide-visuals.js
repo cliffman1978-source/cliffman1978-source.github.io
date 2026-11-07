@@ -2,6 +2,7 @@
    DifficultyBadge.gd. Examples never affect game progress or award prizes. */
 (()=>{'use strict';
 const TAU=Math.PI*2, colors=['#35b9ed','#ee609d','#9c70d8','#f3bb37','#52bc8d'];
+const bonusScenery={WHEEL:'journal/copperleaf-railway.webp',SLOTS:'journal/aurora-palace.webp',PAIRS:'journal/paperwing-library.webp',DISCOVERY:'journal/coral-kingdom.webp',FIREFLY:'forest.webp',FLIGHT:'forest.webp'};
 const images=new Map(), reduced=matchMedia('(prefers-reduced-motion: reduce)');
 function asset(key){const path=key.includes('/')||key.endsWith('.webp')?key:'icons/'+key.toLowerCase()+'.webp';if(!images.has(path)){const i=new Image();i.src='assets/'+path;images.set(path,i);}return images.get(path);}
 const clamp=v=>Math.max(0,Math.min(1,v)), smooth=(a,b,t)=>{const v=clamp((t-a)/(b-a));return v*v*(3-2*v);}, lerp=(a,b,t)=>a+(b-a)*t;
@@ -35,6 +36,17 @@ if(t<2.5){let finger=group.length?group.at(-1):[lerp(start[0],end[0],move),lerp(
 text(t<1.8?(group.length?(mode==='cross_gather'?'TAP THE CENTRE':'TAP THE GROUP'):mode==='row_shift'?'SHIFT LEFT ONE SPACE':mode==='column_shift'?'SHIFT UP ONE SPACE':mode==='star_hop'?'SWAP THE L ENDPOINTS':mode==='diagonal_swap'?'SWAP DIAGONALLY':'WATCH THE MOVE'):t<2.5?'MATCH!':t<3.1?'GEMS CLEAR':mode==='rising_tides'&&t<3.8?'GEMS RISE':'WATCH AGAIN',150,146,11);}
 function badge(rank,x=150,y=69,r=39){const n=rank<0?12:rank===0?32:rank===1?8:rank===2?4:rank===3?6:10;c.beginPath();for(let i=0;i<n;i++){let dx,dy;if(rank===1){[dx,dy]=[[-.7,-1],[.7,-1],[1,-.7],[1,.7],[.7,1],[-.7,1],[-1,.7],[-1,-.7]][i];dx*=.85;dy*=.85;}else{const rad=(rank<0&&i%2?.8:rank===4&&i%2?.56:1);dx=Math.cos(-Math.PI/2+i*TAU/n)*rad;dy=Math.sin(-Math.PI/2+i*TAU/n)*rad;}i?c.lineTo(x+dx*r,y+dy*r*.88):c.moveTo(x+dx*r,y+dy*r*.88);}c.closePath();const g=c.createLinearGradient(x-r,y-r,x+r,y+r);g.addColorStop(0,'#b4ecce');g.addColorStop(1,'#318673');c.fillStyle=g;c.fill();c.strokeStyle='#d5ad64';c.lineWidth=5;c.stroke();circle(x+Math.cos(time)*r*.8,y+Math.sin(time)*r*.7,2,'#fff3bc');}
 box(1,1,298,158,'#edf5ec','#d4deca');
+if(bonusScenery[kind]){
+ const scene=asset(bonusScenery[kind]);
+ if(scene.complete&&scene.naturalWidth){
+  const width=scene.naturalWidth,height=Math.min(scene.naturalHeight,width*160/300);
+  c.drawImage(scene,0,(scene.naturalHeight-height)*.18,width,height,1,1,298,158);
+  c.fillStyle='rgba(25,58,49,.22)';c.fillRect(1,1,298,158);
+ }
+ box(0,132,300,28,'#fff7deed','#d5b770');
+ if(kind==='FIREFLY'||kind==='FLIGHT'){box(83,6,134,23,'#fff7deeb');box(75,110,150,21,'#fff7deeb');}
+ if(kind==='SLOTS')box(24,5,252,114,'#153f3ee8','#f3cf71');
+}
 if(kind.startsWith('MODE:')){puzzle(kind.slice(5));return;}
 if(kind==='MATCH'){puzzle('swap');return;}
 if(['HAMMER','BOMB','LIGHTNING','RAINBOW','SHUFFLE','HINT'].includes(kind)){
@@ -54,7 +66,7 @@ icon(kind,38,72-Math.sin(a*Math.PI)*8,26);for(let y=0;y<5;y++)for(let x=0;x<5;x+
 }else if(kind.startsWith('DIFFICULTY:')){const rank=kind.endsWith('ALL')?Math.floor(time/1.5)%6-1:+kind.split(':')[1];badge(rank);text(['VERY EASY · FLOWER','EASY · CIRCLE','MEDIUM · CLIPPED SQUARE','HARD · DIAMOND','EXTREME · HEXAGON','LEGENDARY · STAR'][rank+1],150,139,11);
 }else if(kind==='MAP'){for(let i=0;i<4;i++){let x=40+i*73,y=50+Math.sin(i)*20;if(i<3)line(x,y,x+73,50+Math.sin(i+1)*20,'#bea56a',4);circle(x,y,13,i<2?'#ffdc76':'#adc5cf');text(i<2?String(i+1):'?',x,y+4,13);}box(95,107,110,33,'#f8d879');text('PLAY',150,129,14);pointer(185,123);
 }else if(kind==='SHOP'){icon('COINS',50,68,27);icon('HAMMER',250,68,27);box(103,48,94,38,'#f8d879');text('BUY',150,73,16);pointer(177,77);text('CHECK PRICE → CONFIRM → INVENTORY',150,141,10);
-}else if(kind==='PAIRS'){for(let i=0;i<2;i++){const w=Math.max(4,Math.abs(Math.cos(a*Math.PI))*65),x=105+i*90;box(x-w/2,27,w,88,a<.5?'#b4dce8':'#fff9e8');if(a>.65)icon('pip.webp',x,69,25);else if(a<.3)text('?',x,80,28);}if(a===1)burst(150,75,65);text('REVEAL TWO · FIND THE MATCH',150,146,11);
+}else if(kind==='PAIRS'){for(let i=0;i<2;i++){const w=Math.max(4,Math.abs(Math.cos(a*Math.PI))*65),x=105+i*90;box(x-w/2,27,w,88,a<.5?'#1e544b':'#fff9e8');if(a>.65)icon('pip.webp',x,69,25);else if(a<.3)icon('BOOK',x,70,22);}if(a===1)burst(150,75,65);text('REVEAL TWO · FIND THE MATCH',150,146,11);
 }else if(kind==='DISCOVERY'){for(let i=0;i<2;i++){box(17+i*140,27,126,100,'#cee8d4');icon('discovery',80+i*140,75,44);if(i===0){text('★',100,54,20,'#b97c17');}if(a>.2)circle(100+i*140,47,15,null,'#d74d86');}text('SPOT THE MISSING OBJECT',150,149,11);
 }else if(kind==='SLOTS'){for(let x=0;x<5;x++)for(let y=0;y<3;y++){const k=y===1&&a===1?'COINS':['GIFT','COINS','HINT'][(x+y+Math.floor((1-a)*20))%3];icon(k,54+x*48,30+y*38,16);}if(a===1)line(32,68,268,68,'#d8a32e',3);text('MATCH SYMBOLS ON THE PAYLINES',150,149,10);
 }else if(kind==='WHEEL'){c.save();c.translate(150,76);c.rotate((1-(1-a)**3)*TAU*2);icon('WHEEL',0,0,59);c.restore();icon('COINS',150,76,18);c.beginPath();c.moveTo(143,12);c.lineTo(157,12);c.lineTo(150,29);c.closePath();c.fillStyle='#735b8e';c.fill();text('TAP TO SPIN · POINTER MARKS PRIZE',150,149,10);
@@ -67,9 +79,16 @@ else if(kind==='JOURNAL'){icon('BOOK',70,73,37);box(130,29,145,93);text('PIP’S
 }else if(kind==='GIFT'){icon('WATCH',65,70,31);arrow([[110,70],[185,70]]);icon('GIFT',235,70,28+a*5);text('COMPLETE THE REQUIRED ADS → CLAIM',150,145,10);
 }else{icon('BOOK',55,65,28);box(105,38,170,60);text('TAP TO OPEN',190,70,15);pointer(200,86);text('BACK RETURNS YOU SAFELY',150,144,11);}
 }
-const examples=[...document.querySelectorAll('.guide-demo')].map(fig=>{const item={fig,canvas:fig.querySelector('canvas'),lesson:fig.closest('details'),kind:fig.dataset.demo,time:0,playing:!reduced.matches,visible:false};const toggle=fig.querySelector('.demo-toggle');function label(){toggle.textContent=item.playing?'Pause animation':'Play animation';toggle.setAttribute('aria-label',(item.playing?'Pause':'Play')+' animation: '+item.lesson.querySelector('summary').innerText.replace('+','').trim());}toggle.onclick=()=>{item.playing=!item.playing;label();};fig.querySelector('.demo-replay').onclick=()=>{item.time=0;item.playing=true;label();};label();item.lesson.addEventListener('toggle',()=>{if(item.lesson.open){render(item.canvas,item.kind,item.time);}});return item;});
+const examples=[...document.querySelectorAll('.guide-demo')].map(fig=>{const item={fig,canvas:fig.querySelector('canvas'),lesson:fig.closest('details')||fig.closest('[data-bonus-panel]'),kind:fig.dataset.demo,time:0,playing:!reduced.matches,visible:false};const toggle=fig.querySelector('.demo-toggle');function label(){toggle.textContent=item.playing?'Pause animation':'Play animation';toggle.setAttribute('aria-label',(item.playing?'Pause':'Play')+' animation: '+(item.lesson.dataset.title||item.lesson.querySelector('summary').innerText.replace('+','').trim()));}toggle.onclick=()=>{item.playing=!item.playing;label();};fig.querySelector('.demo-replay').onclick=()=>{item.time=0;item.playing=true;label();};label();item.lesson.addEventListener('toggle',()=>{if(item.lesson.open){render(item.canvas,item.kind,item.time);}});return item;});
+for(const item of examples){
+ if(item.lesson.hasAttribute('data-bonus-panel') && ['WHEEL','SLOTS','FIREFLY'].includes(item.kind)){
+  const replay=item.fig.querySelector('.demo-replay');
+  item.canvas.addEventListener('click',()=>replay.click());
+  item.canvas.style.cursor='pointer';
+ }
+}
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>{const item=examples.find(i=>i.fig===e.target);item.visible=e.isIntersecting;}));examples.forEach(i=>observer.observe(i.fig));
-let last=0;function frame(now){const dt=Math.min(.1,(now-last)/1000);last=now;if(!document.hidden)for(const i of examples)if(i.visible&&i.lesson.open&&!i.lesson.hidden){if(i.playing)i.time+=dt;render(i.canvas,i.kind,i.time);}requestAnimationFrame(frame);}requestAnimationFrame(frame);
+let last=0;function frame(now){const dt=Math.min(.1,(now-last)/1000);last=now;if(!document.hidden)for(const i of examples)if(i.visible&&(i.lesson.open||i.lesson.hasAttribute('data-bonus-panel'))&&!i.lesson.hidden){if(i.playing)i.time+=dt;render(i.canvas,i.kind,i.time);}requestAnimationFrame(frame);}requestAnimationFrame(frame);
 reduced.addEventListener('change',()=>{for(const i of examples){i.playing=!reduced.matches;const b=i.fig.querySelector('.demo-toggle');b.textContent=i.playing?'Pause animation':'Play animation';b.setAttribute('aria-label',b.textContent+': '+i.lesson.id);}});
 })();
 
