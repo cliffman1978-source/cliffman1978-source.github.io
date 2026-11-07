@@ -60,3 +60,10 @@
 }
 .practice-play .practice-success{padding:12px 16px;border:2px solid #397b49;border-radius:12px;background:#e7f6df;color:#16482f;font-weight:650}
 .practice-copy .practice-confirm-pref{display:flex;gap:8px;align-items:center;margin:.6rem 0;font-size:.95rem;font-weight:500}.practice-confirm-pref input{width:18px;height:18px;accent-color:#175c50}
+
+.realm-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.realm-gallery figure{margin:0;min-width:0}
+.realm-gallery a{display:block;overflow:hidden;border-radius:14px;background:#eaf0df}
+.realm-gallery img{width:100%;height:auto;aspect-ratio:1.65;object-fit:cover;object-position:50% 3%}
+.realm-gallery figcaption{margin-top:8px;font:600 1.2rem/1.4 Georgia,serif}
+@media(max-width:640px){.realm-gallery{grid-template-columns:1fr;gap:18px}}
