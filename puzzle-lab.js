@@ -8,6 +8,24 @@
   const gems = ['Blue flower', 'Red flower', 'Green flower', 'Yellow flower', 'Purple flower'];
   const voice = lab.querySelector('audio');
   const speechButtons = [...lab.querySelectorAll('[data-cue]')];
+  const speakCorrect = lab.querySelector('#speak-correct');
+  const confirmationLines = {
+    "swap": "That's it! Your swap lined up matching flowers.",
+    "tap_groups": "You found a group! Those flowers connect along their edges.",
+    "diagonal_swap": "A lovely match! Your swap brought the flowers into a straight line.",
+    "cross_gather": "Right on target! Follow the matching flowers straight out from your tap.",
+    "rising_tides": "Lovely move! You made a match. New gems can rise into those spaces.",
+    "row_shift": "There it is! Sliding the whole row brought the flowers into line.",
+    "column_shift": "You found it! Shifting the column lined up the matching flowers.",
+    "star_hop": "Beautiful hop! Your L-shaped swap made a straight line of flowers.",
+    "diagonal_groups": "Those flowers belong together! In this puzzle, corners count too.",
+    "bloom_groups": "A blooming match! You joined at least three flowers along their edges."
+};
+  try { speakCorrect.checked = localStorage.getItem('pip-workshop-speak-correct') !== 'off'; } catch {}
+  speakCorrect.addEventListener('change', () => {
+    try { localStorage.setItem('pip-workshop-speak-correct', speakCorrect.checked ? 'on' : 'off'); } catch {}
+    if (!speakCorrect.checked && cue === 'correct') voice.pause();
+  });
   let cue = null;
   function updateSpeech() {
     for (const button of speechButtons) {
@@ -23,7 +41,7 @@
     cue = button.dataset.cue;
     voice.src = 'assets/puzzle-voice/' + key() + (cue === 'tip' ? '-tip' : '') + '.mp3';
     voice.play().catch(error => {
-      if (error.name !== 'AbortError') feedback.textContent = 'The recording could not play. The puzzle rules are written beside the board.';
+      if (!result.length && error.name !== 'AbortError') feedback.textContent = 'The recording could not play. The puzzle rules are written beside the board.';
       updateSpeech();
     });
   });
@@ -126,6 +144,7 @@
     lab.querySelector('.practice-details').textContent=lesson.details;
     tiles=Array.from(layouts[key()]||layouts.swap,Number);
     for(const cell of board.children) cell.firstElementChild.getAnimations?.().forEach(animation=>animation.cancel());
+    feedback.classList.toggle('practice-success',false);
     selected=null;result=[];hinted=[];feedback.textContent=isGroup()?'Pick a connected group to clear.':'Pick your first gem.';
     draw();
   }
@@ -149,7 +168,14 @@
       selected=null;
     }
     if(result.length) {
-      feedback.textContent=result.length+' gems would clear. '+(key()==='cross_gather'?'Only straight arms from the tapped gem count.':key()==='rising_tides'?'Gems refill from below, lifting anything beneath the cleared tiles.':isGroup()?'The marked gems all connect to your tap.':'The marked gems line up in a row or column.');
+      feedback.classList.toggle('practice-success',true);
+      feedback.textContent='✓ Correct move! '+confirmationLines[key()]+' '+result.length+' gems matched.';
+      if (speakCorrect.checked) {
+        voice.pause();
+        cue='correct';
+        voice.src='assets/puzzle-voice/'+key()+'-correct.mp3';
+        voice.play().catch(() => {}); // The visible confirmation remains available.
+      }
     }
     draw();
     animateMove(origins);
