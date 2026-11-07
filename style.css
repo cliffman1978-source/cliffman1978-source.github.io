@@ -89,3 +89,9 @@
 .bonus-choice,.bonus-picker{scroll-margin-top:18px}
 .bonus-panel{scroll-margin-top:100px}.bonus-panel .guide-demo{border-color:#d6bf89;box-shadow:0 5px 14px #2a493319}.bonus-panel .guide-demo canvas{box-shadow:0 0 0 1px #d2ba80}
 .pair-cards button:not(.revealed){background:radial-gradient(ellipse at 50% 35%,#3b7864,#1b473d);border:2px solid #b89651;box-shadow:inset 0 0 0 2px #366453}
+
+.story-guide>p{max-width:80ch}.story-guide h2{margin:0 0 14px}.story-guide h3{font:700 1.5rem/1.2 Georgia,serif}
+.chapter-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:24px 0}
+.chapter-steps article,.chapter-example{border:1px solid #d5c7a3;background:#fffdf5;border-radius:16px;padding:18px}
+.chapter-steps h3{margin:10px 0}.chapter-steps p{font-size:1rem}.chapter-example summary{cursor:pointer;font-weight:700;color:#255546}.chapter-example small{color:#5b655a;margin-left:8px}.chapter-example table{border-collapse:collapse;width:100%;max-width:760px}.chapter-example td,.chapter-example th{text-align:left;padding:7px;border-bottom:1px solid #d5c7a3}.chapter-example th{background:#edf2df}
+@media(max-width:800px){.chapter-steps{grid-template-columns:1fr}.chapter-example td,.chapter-example th{font-size:.9rem;padding:5px}}
