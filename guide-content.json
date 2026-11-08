@@ -1,7 +1,7 @@
 [
   {
     "title": "FIND YOUR CONTROLS",
-    "body": "Open Menu → Settings → Volume Controls to adjust music and effects or turn Voice on or off. When guidance is muted, tap the voice button at the top of the screen to hear the current directions again. Menu → Guides opens the Field Guide; Bonus and Shop & Items group games and supplies. Gentle upbeat music varies by world and activity, with three arrangements across each world’s puzzle progress; warning cues become more urgent with 20 seconds or 5 moves left, and again at 7 seconds or 2 moves. Watch the counters even when sound is muted. Use Pause during a puzzle; My Map and Quests remain in the bottom navigation between levels.",
+    "body": "Open Menu → Settings → Volume Controls to adjust music and effects or turn Voice on or off. When guidance is muted, tap the voice button at the top of the screen to hear the current directions again. Menu → Guides opens the Field Guide; Bonus and Shop & Items group games and supplies. Gentle upbeat music varies by world and activity, with three arrangements across each world’s puzzle progress; warning cues become more urgent with 20 seconds or 5 moves left, and again at 7 seconds or 2 moves. On Android, the bottom menu shows your gold coins and lives throughout play. The puzzle header shows your level and score. Use Pause during a puzzle; My Map and Quests remain in the bottom navigation between levels.",
     "category": "Getting started"
   },
   {
@@ -201,7 +201,7 @@
   },
   {
     "title": "MAP & STORY",
-    "body": "Open Menu → Worlds → My World Map to explore all 50 realms. My Map returns to your current town; Quests opens your tasks and unclaimed rewards. At the welcome screen, continue your journey or open the map. In the journal, Choose a route shows four destinations for a five-level chapter. Two are free. The other two cost different amounts of gold. Your saved route sets the story and puzzle realm for those levels. Your ending changes the places offered next chapter.",
+    "body": "Open Menu → Worlds → My World Map to explore all 50 realms. My Map returns to your current town; Quests opens your tasks and unclaimed rewards. At the welcome screen, continue your journey or open the map. In the journal, Choose a route shows four destinations for a five-level chapter. In the Android update, blue is free, mint requires one rewarded ad, lavender requires two, and gold shows the coin price. Your saved route sets the story and puzzle realm for those levels. Your ending changes the places offered next chapter.",
     "category": "Worlds & quests"
   },
   {
@@ -221,7 +221,7 @@
   },
   {
     "title": "STARS & GIFTS",
-    "body": "Your performance rating uses what remains when you win, not your score. Moves: 10+ earns 3 stars, 4-9 earns 2, and 0-3 earns 1. Timed levels: 55%+ time earns 3, 25%+ earns 2, and less earns 1. Your best rating also earns 1, 2 or 3 BUILD COINS. Improving a previous rating pays only the difference. Build stages cost 4, 6 and 10 Build Coins. After five first wins, the keeper counts your saved balance and covers only missing construction coins, once per chapter. Higher ratings still earn their difference. Gold coins are separate. Collect gifts along the map and return for a different daily gift.",
+    "body": "Your performance rating uses what remains when you win, not your score. Moves: 10+ earns 3 stars, 4-9 earns 2, and 0-3 earns 1. Timed levels: 55%+ time earns 3, 25%+ earns 2, and less earns 1. Your best rating also earns 1, 2 or 3 BUILD COINS. Improving a previous rating pays only the difference. Build stages cost 4, 6 and 10 Build Coins. After five first wins, the keeper counts your saved balance and covers only missing construction coins, once per chapter. Higher ratings still earn their difference. Gold coins are separate. Tap the gift box on the level trail to find an available gift. Tap the gift on the path to collect it, then choose Continue. The daily gift is separate.",
     "category": "Worlds & quests"
   },
   {
