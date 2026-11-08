@@ -110,3 +110,24 @@
 .bonus-practice .demo-controls button{background:#ffe4a0;border-color:#bc964d}
 .bonus-practice select{min-height:44px;font:inherit}
 .bonus-practice [role=status]{font-weight:700;margin:.8em 0 .25em}
+
+.header{position:sticky;top:0;z-index:20;background:#fffaf0;border-bottom:1px solid #ddd0b4;max-width:none;padding:10px max(20px,calc((100% - 1176px)/2));flex-wrap:nowrap}
+.header .brand img{width:42px;height:42px}.header nav.site-nav{width:auto;border:0;padding:0;gap:24px;justify-content:flex-end;font-size:14px}
+.nav-shortcuts{display:flex;gap:22px;align-items:center}.site-menu{position:relative}
+.site-menu summary{cursor:pointer;display:flex;gap:10px;align-items:center;list-style:none;color:#fff8e4;background:#214d44;border-radius:12px;padding:9px 17px;font-weight:700;min-height:44px}
+.site-menu summary::-webkit-details-marker{display:none}.site-menu summary::after{content:'⌄'}.site-menu[open] summary::after{content:'⌃'}
+.menu-directory{position:absolute;top:calc(100% + 9px);right:0;width:min(640px,calc(100vw - 32px));max-height:calc(100dvh - 80px);overflow:auto;background:#fffaf0;border:1px solid #c9b680;border-radius:15px;padding:18px;box-shadow:0 12px 35px #183b3a38;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.menu-directory strong{display:block;color:#725828;font:700 19px Georgia,serif;padding:8px}.menu-directory a{display:block;padding:9px 8px;line-height:1.4;min-height:42px}.menu-directory a:hover{background:#f0ead9;border-radius:6px}
+.menu-home{grid-column:1/-1;border-bottom:1px solid #d7c9ae}.back-hub{display:flex;gap:8px;align-items:center}.back-hub span:last-child{color:#4c625b}
+html{scroll-padding-top:80px}.story-cover{display:flex;align-items:center;min-height:365px;overflow:hidden;padding:clamp(24px,5vw,62px);border-radius:24px;background:linear-gradient(90deg,#113938 8%,#143e3bec 35%,#153a3840 68%,transparent),url('assets/journal/paperwing-library.webp') right 48% / cover;color:#fffbec}
+.story-cover>div{max-width:460px}.story-kicker{letter-spacing:.14em;text-transform:uppercase;color:#ffdf8a;font-weight:750;font-size:.77rem}
+.story-cover h2{font-size:clamp(46px,6vw,84px);color:inherit;line-height:.97}.story-cover p:not(.story-kicker){max-width:38ch;line-height:1.55}
+.story-spread{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);gap:clamp(24px,5vw,64px);margin:40px 0}
+.story-guide .chapter-path>h3,.story-guide .story-cost h3{font-size:clamp(25px,3vw,35px);line-height:1.15}
+.chapter-path article{position:relative;display:grid;grid-template-columns:50px 1fr;gap:16px;padding:16px 0}
+.chapter-path article:not(:last-child)::after{content:'';position:absolute;top:70px;bottom:-10px;left:24px;border-left:2px dashed #cbbb8b}
+.chapter-path h4{font:700 22px Georgia,serif;margin:0 0 6px}.chapter-path p,.story-cost p{line-height:1.62;margin:0}
+.story-cost{align-self:start;padding:clamp(20px,3vw,36px);border:1px solid #cfb777;border-radius:18px;background:#f5edd8}.story-cost>img{margin-bottom:12px}.story-cost dl{margin:16px 0}.story-cost dl div{display:flex;justify-content:space-between;padding:.4em 0;border-bottom:1px solid #d7c79f}.story-cost dd{margin:0;font-weight:750}.story-cost dl div:last-child{font-weight:750}
+.chapter-example{scroll-margin-top:12px}.chapter-example summary{min-height:44px;align-content:center}.map-story-link{display:inline-block;font-weight:700;padding:8px 16px 8px 0}
+@media(max-width:800px){.nav-shortcuts{display:none}.header{justify-content:space-between;padding:8px 16px}.header .brand{font-size:19px}.header .brand small{font-size:8px}.story-spread{grid-template-columns:1fr}.story-cover{align-items:flex-end;min-height:390px;background-image:linear-gradient(0deg,#103836 0%,#103836f5 26%,#103836d9 45%,#1038361c 82%),url('assets/journal/paperwing-library.webp')}.story-cover>div{padding-top:105px}}
+@media(max-width:540px){.menu-directory{grid-template-columns:1fr;gap:3px;padding:12px}.menu-directory>div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.menu-directory strong{grid-column:1/-1;border-bottom:1px solid #e3d8bc;padding:5px 8px}.menu-directory a{font-size:14px}.story-cover p:not(.story-kicker){font-size:16px}.chapter-path article{grid-template-columns:40px 1fr;gap:10px}.chapter-path article::after{left:19px!important}}

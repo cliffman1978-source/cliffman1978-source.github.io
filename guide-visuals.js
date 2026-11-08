@@ -64,7 +64,22 @@ icon(kind,38,72-Math.sin(a*Math.PI)*8,26);for(let y=0;y<5;y++)for(let x=0;x<5;x+
 }else if(kind==='TIME'){icon('TIME',55,75,30);text('TIME 20 → '+(20+Math.round(30*a)),200,63,16);text('MOVES 4 → '+(4+Math.round(5*a)),200,102,16);
 }else if(kind==='LIFE'){for(let i=0;i<3;i++){circle(90+i*60,75,24,'#c6d8d2');if(i<2||a>.5)icon('LIFE',90+i*60,75,23);}if(a>.5)burst(210,75,30);text('CLAIM A SAVED LIFE',150,146,11);
 }else if(kind.startsWith('DIFFICULTY:')){const rank=kind.endsWith('ALL')?Math.floor(time/1.5)%6-1:+kind.split(':')[1];badge(rank);text(['VERY EASY · FLOWER','EASY · CIRCLE','MEDIUM · CLIPPED SQUARE','HARD · DIAMOND','EXTREME · HEXAGON','LEGENDARY · STAR'][rank+1],150,139,11);
-}else if(kind==='MAP'){for(let i=0;i<4;i++){let x=40+i*73,y=50+Math.sin(i)*20;if(i<3)line(x,y,x+73,50+Math.sin(i+1)*20,'#bea56a',4);circle(x,y,13,i<2?'#ffdc76':'#adc5cf');text(i<2?String(i+1):'?',x,y+4,13);}box(95,107,110,33,'#f8d879');text('PLAY',150,129,14);pointer(185,123);
+}else if(kind==='MAP'){
+ const landscape=asset('journal/paperwing-library.webp');
+ if(landscape.complete && landscape.naturalWidth){
+  const cropHeight=landscape.naturalWidth*160/300;
+  c.drawImage(landscape,0,(landscape.naturalHeight-cropHeight)*.55,landscape.naturalWidth,cropHeight,0,0,300,160);
+ }
+ const stops=[[37,97],[102,65],[171,78],[250,39]];
+ c.lineJoin='round';c.lineCap='round';
+ for(const [stroke,width] of [['#76562c',7],['#ffe39b',4]]){
+  c.beginPath();stops.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.strokeStyle=stroke;c.lineWidth=width;c.stroke();
+ }
+ stops.forEach(([x,y],i)=>{circle(x,y,10,i<2?'#ffda7b':'#385c54','#795b32');text(String(i+1),x,y+4,11,i<2?'#3d372a':'#fff8d9');});
+ const travel=smooth(.35,2.4,t);
+ icon('pip.webp',lerp(37,102,travel),lerp(97,65,travel)-20-Math.sin(travel*Math.PI)*7,17);
+ box(0,124,300,36,'#183f3e');text('FOLLOW THE TRAIL',74,146,12,'#fff7de');
+ box(186,129,102,25,'#ffdb81','#bf9145');text('▶  PLAY',237,146,12,'#3c3728');
 }else if(kind==='SHOP'){icon('COINS',50,68,27);icon('HAMMER',250,68,27);box(103,48,94,38,'#f8d879');text('BUY',150,73,16);pointer(177,77);text('CHECK PRICE → CONFIRM → INVENTORY',150,141,10);
 }else if(kind==='PAIRS'){for(let i=0;i<2;i++){const w=Math.max(4,Math.abs(Math.cos(a*Math.PI))*65),x=105+i*90;box(x-w/2,27,w,88,a<.5?'#1e544b':'#fff9e8');if(a>.65)icon('pip.webp',x,69,25);else if(a<.3)icon('BOOK',x,70,22);}if(a===1)burst(150,75,65);text('REVEAL TWO · FIND THE MATCH',150,146,11);
 }else if(kind==='DISCOVERY'){for(let i=0;i<2;i++){box(17+i*140,27,126,100,'#cee8d4');icon('discovery',80+i*140,75,44);if(i===0){text('★',100,54,20,'#b97c17');}if(a>.2)circle(100+i*140,47,15,null,'#d74d86');}text('SPOT THE MISSING OBJECT',150,149,11);

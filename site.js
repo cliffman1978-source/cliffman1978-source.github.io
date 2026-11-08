@@ -37,6 +37,16 @@
   for(const [selector,step] of [['#prev-topics',-1],['#next-topics',1]]) {
     $(selector).addEventListener('click',()=>{page+=step;updateGuide();const first=lessons.find(l=>!l.hidden);first?.querySelector('summary').focus();});
   }
+  const menu = $('.site-menu');
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && menu.open) {
+      menu.open = false;
+      menu.querySelector('summary').focus();
+    }
+  });
+  document.addEventListener('click', event => {
+    if (!menu.contains(event.target)) menu.open = false;
+  });
   function route() {
     let id;
     try { id=decodeURIComponent(location.hash.slice(1)); } catch { id='home'; }
@@ -47,6 +57,11 @@
     for(const item of sections) item.hidden=atHome ? !homeViews.has(item.id) : item!==section;
     $('.trail-strip').hidden=!atHome;
     $('.back-hub').hidden=atHome;
+    const destination = menu.querySelector('a[href="#' + view + '"]');
+    $('.current-section').textContent = destination?.textContent || '';
+    if (menu.open && menu.contains(document.activeElement)) menu.querySelector('summary').focus();
+    menu.open = false;
+    if (id === 'chapter-one') target.open = true;
     for(const button of all('.header nav a')) {
       if(button.hash==='#'+view) button.setAttribute('aria-current','page');else button.removeAttribute('aria-current');
     }
@@ -65,7 +80,7 @@
     }
     for(const player of all('audio')) if(!player.paused && player.closest('[hidden]')) player.pause();
     requestAnimationFrame(()=>{
-      if(target?.classList.contains('lesson') || id==='explore') target.scrollIntoView({block:'start'});
+      if(target?.classList.contains('lesson') || id==='explore' || id==='chapter-one') target.scrollIntoView({block:'start'});
       else if(!panels.includes(target)) window.scrollTo({top:0,behavior:'instant'});
     });
   }
