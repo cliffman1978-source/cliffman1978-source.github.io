@@ -50,7 +50,13 @@
   function route() {
     let id;
     try { id=decodeURIComponent(location.hash.slice(1)); } catch { id='home'; }
-    const target=document.getElementById(id);
+    const modePicker = $('#practice-mode');
+    const practiceMode = id.startsWith('practice-') && [...modePicker.options].find(option => option.value === id.slice(9));
+    const target = document.getElementById(practiceMode ? 'puzzles' : id);
+    if (practiceMode) {
+      modePicker.value = practiceMode.value;
+      modePicker.dispatchEvent(new Event('change'));
+    }
     const section=target?.closest('main > section');
     const view=section?.id || 'home';
     const atHome=homeViews.has(view);
@@ -78,9 +84,9 @@
         if(link.hash==='#'+current.id)link.setAttribute('aria-current','true');else link.removeAttribute('aria-current');
       }
     }
-    for(const player of all('audio')) if(!player.paused && player.closest('[hidden]')) player.pause();
+    for (const player of all('audio, video')) if (!player.paused && player.parentElement.closest('[hidden]')) player.pause();
     requestAnimationFrame(()=>{
-      if(target?.classList.contains('lesson') || id==='explore' || id==='chapter-one') target.scrollIntoView({block:'start'});
+      if(target?.classList.contains('lesson') || id==='explore' || id==='chapter-one' || target?.classList.contains('tour-stop')) target.scrollIntoView({block:'start'});
       else if(!panels.includes(target)) window.scrollTo({top:0,behavior:'instant'});
     });
   }
@@ -154,3 +160,23 @@
   }
   discovery.querySelector('.discovery-reset').addEventListener('click',startDiscovery);startDiscovery();discovery.hidden=false;
 })();
+
+for (const audio of document.querySelectorAll('.tip-actions audio')) {
+  const button = document.createElement('button');
+  button.type = 'button';
+  const update = () => {
+    button.textContent = audio.paused ? '▶ Listen' : 'Ⅱ Pause';
+    button.setAttribute('aria-label', (audio.paused ? 'Listen to ' : 'Pause ') + audio.closest('article').querySelector('h3').textContent);
+  };
+  update();
+  button.addEventListener('click', async () => {
+    if (!audio.paused) { audio.pause(); return; }
+    try { await audio.play(); }
+    catch (error) {
+      if (error.name !== 'AbortError') { audio.hidden = false; button.hidden = true; }
+    }
+  });
+  for (const event of ['play','pause','ended']) audio.addEventListener(event, update);
+  audio.before(button);
+  audio.hidden = true;
+}
