@@ -1,7 +1,7 @@
 [
   {
     "title": "FIND YOUR CONTROLS",
-    "body": "Open Menu → Settings → Volume Controls to adjust music and effects or turn Voice on or off. When guidance is muted, tap the voice button at the top of the screen to hear the current directions again. Menu → Guides opens the Field Guide; Bonus and Shop & Items group games and supplies. Gentle upbeat music varies by world and activity, with three arrangements across each world’s puzzle progress; warning cues become more urgent with 20 seconds or 5 moves left, and again at 7 seconds or 2 moves. On Android, the bottom menu shows your gold coins and lives throughout play. The puzzle header shows your level and score. Use Pause during a puzzle; My Map and Quests remain in the bottom navigation between levels.",
+    "body": "Open Menu → Settings → Volume Controls to adjust music and effects or turn Voice on or off. When guidance is muted, tap the voice button at the top of the screen to hear the current directions again. Menu → Guides opens the Field Guide; Bonus and Shop & Items group games and supplies. Gentle upbeat music varies by world and activity, with three arrangements across each world’s puzzle progress; warning cues become more urgent with 20 seconds or 5 moves left, and again at 7 seconds or 2 moves. On Android, the bottom menu shows your gold coins and lives throughout play. The puzzle header shows your level and score. Use Pause during a puzzle. Between levels, Menu → Worlds opens My World Map and Spin Quests.",
     "category": "Getting started"
   },
   {
@@ -56,7 +56,7 @@
   },
   {
     "title": "RISING TIDES",
-    "body": "Swap to match 3+ in a row or column. Gems rise; deliver relics to the TOP arrows. Swap neighbouring gems up, down, left or right. Gems refill from below. Clear ABOVE a relic to lift it to the top exit.",
+    "body": "Swap to match 3+ in a row or column. Pieces rise from below. Swap neighbouring pieces up, down, left or right. On delivery levels, clear ABOVE the pictured relic or charm to lift it to a TOP exit arrow.",
     "category": "Puzzle styles"
   },
   {
@@ -96,7 +96,7 @@
   },
   {
     "title": "DELIVER STORY RELICS",
-    "body": "Each world has its own story object. Normally, clear gems below it to reach the bottom gold arrows. In Rising Tides, clear ABOVE the relic to lift it to the TOP arrows. Relics cannot be blasted away.",
+    "body": "Delivery pieces include realm relics and character charms. Guide the pictured piece to an exit. Normally, clear pieces below it to reach the bottom gold arrows. In Rising Tides, clear ABOVE the relic to lift it to the TOP arrows. Relics cannot be blasted away.",
     "category": "Puzzle rules"
   },
   {
@@ -201,7 +201,7 @@
   },
   {
     "title": "MAP & STORY",
-    "body": "Open Menu → Worlds → My World Map to explore all 50 realms. My Map returns to your current town; Quests opens your tasks and unclaimed rewards. At the welcome screen, continue your journey or open the map. In the journal, Choose a route shows four destinations for a five-level chapter. In the Android update, blue is free, mint requires one rewarded ad, lavender requires two, and gold shows the coin price. Your saved route sets the story and puzzle realm for those levels. Your ending changes the places offered next chapter.",
+    "body": "Open Menu → Worlds → My World Map to explore all 50 realms. My Map returns to your current town; Quests opens your tasks and unclaimed rewards. Pick any unlocked trail number and tap Play. After level 10, one puzzle per ten uses portraits. Match identical faces with the usual rules. Replays keep the same cast. In the journal, Choose a route shows four destinations for a five-level chapter. Blue is free, mint requires one rewarded ad, lavender requires two, and gold shows the coin price. Your saved route sets the story and puzzle realm for those levels. Your ending changes the places offered next chapter.",
     "category": "Worlds & quests"
   },
   {
@@ -211,7 +211,7 @@
   },
   {
     "title": "MEDIUM · CLIPPED SQUARE",
-    "body": "A square with clipped corners marks a step up. Plan matches around obstacles; some levels use a timer.",
+    "body": "A square with clipped corners marks a step up. Some levels use a timer. From Medium onward, Bloom Gather and Diagonal Gather ask for more points or pieces when those goals appear.",
     "category": "Worlds & quests"
   },
   {
@@ -221,7 +221,7 @@
   },
   {
     "title": "STARS & GIFTS",
-    "body": "Your performance rating uses what remains when you win, not your score. Moves: 10+ earns 3 stars, 4-9 earns 2, and 0-3 earns 1. Timed levels: 55%+ time earns 3, 25%+ earns 2, and less earns 1. Your best rating also earns 1, 2 or 3 BUILD COINS. Improving a previous rating pays only the difference. Build stages cost 4, 6 and 10 Build Coins. After five first wins, the keeper counts your saved balance and covers only missing construction coins, once per chapter. Higher ratings still earn their difference. Gold coins are separate. Tap the gift box on the level trail to find an available gift. Tap the gift on the path to collect it, then choose Continue. The daily gift is separate.",
+    "body": "Your performance rating uses what remains when you win, not your score. Moves: 10+ earns 3 stars, 4-9 earns 2, and 0-3 earns 1. Timed levels: 55%+ time earns 3, 25%+ earns 2, and less earns 1. Your best rating also earns 1, 2 or 3 BUILD COINS. Winning a replay earns gold. Improving your best rating also awards one Build Coin per new star. Matching or falling below your best adds no Build Coins. Build stages cost 4, 6 and 10 Build Coins. After five first wins, the keeper counts your saved balance and covers only missing construction coins, once per chapter. Higher ratings still earn their difference. Gold coins are separate. Tap the gift box on the level trail to find an available gift. Tap the gift on the path to collect it, then choose Continue. The daily gift is separate.",
     "category": "Worlds & quests"
   },
   {
@@ -246,7 +246,7 @@
   },
   {
     "title": "EARN WHEEL SPINS",
-    "body": "Tap Quests at the bottom of your map or any secondary screen. World and Daily cards show each task, progress and exact reward. Tap a completed card to claim its spins. Daily tasks reset at local midnight; earned spins carry over. Get extra spin tokens in Coin Shop → Tokens or Market Place → Token Packs. The wheel count includes earned spins plus saved tokens. Spin directly on the wheel; earned spins are used first, then one token per spin.",
+    "body": "Open Menu → Worlds → Spin Quests. World and Daily cards show each task, progress and exact reward. Tap a completed card to claim its spins. Daily tasks reset at local midnight; earned spins carry over. Get extra spin tokens in Coin Shop → Tokens or Market Place → Token Packs. The wheel count includes earned spins plus saved tokens. Spin directly on the wheel; earned spins are used first, then one token per spin.",
     "category": "Bonus games"
   },
   {
@@ -276,12 +276,12 @@
   },
   {
     "title": "PIP’S COIN SHOP",
-    "body": "Choose Boosters, Tokens or Lives directly below the store tabs. Spend earned coins on hints, hearts, boosters and saved game tokens. Tap an item and confirm its coin price. A Purchase Complete celebration confirms the item was saved; tap Continue to return to the shop. This section never charges real money. Use the bottom navigation to switch between Coin Shop, Inventory and Watch & Earn. Market Place is separate and contains real-money purchases.",
+    "body": "Choose Boosters, Tokens or Lives directly below the store tabs. Spend earned coins on hints, hearts, boosters and saved game tokens. Tap an item and confirm its coin price. A Purchase Complete celebration confirms the item was saved; tap Continue to return to the shop. This section never charges real money. Find Inventory under Menu → Shop & Items. On Android, the bottom menu opens Coin Shop, Market Place and Watch & Earn. Market Place is separate and contains real-money purchases.",
     "category": "Shops & rewards"
   },
   {
     "title": "PIP’S MARKET PLACE",
-    "body": "Buy coin packs, booster bundles, hearts and token packs with real money. Choose Coin Packs, Booster Bundles or Token Packs. Use the bottom navigation to switch between Market Place, Inventory and Watch & Earn. Items bought with earned coins are in the separate Coin Shop. Tap an available pack to review and confirm the store purchase. The store shows your local currency and final price. Preview or unavailable packs cannot be bought. A Purchase Complete celebration lists the exact items after successful delivery and saving. Check Purchases retries unfinished transactions; spent consumables are not restored. Read Terms & Conditions from the store footer or Menu → Settings.",
+    "body": "Buy coin packs, booster bundles, hearts and token packs with real money. Choose Coin Packs, Booster Bundles or Token Packs. For saved items, open Menu → Shop & Items → Inventory. Items bought with earned coins are in the separate Coin Shop. Tap an available pack to review and confirm the store purchase. The store shows your local currency and final price. Preview or unavailable packs cannot be bought. A Purchase Complete celebration lists the exact items after successful delivery and saving. The store checks unfinished purchases automatically. If a check needs another attempt, tap Check Purchases. Read Terms & Conditions from the store footer or Menu → Settings.",
     "category": "Shops & rewards"
   },
   {
