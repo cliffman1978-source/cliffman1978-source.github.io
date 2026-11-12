@@ -62,3 +62,12 @@
 .discovery-rows .discovery-painting button.found {
   outline:3px solid #ffec9a; outline-offset:-4px; box-shadow:inset 0 0 0 6px #5d8862;
 }
+.practice-board[data-pieces="characters"] .practice-gem {
+  background-image:url('assets/workshop/level-16-pieces.webp');
+}
+.practice-copy #practice-pieces { margin-bottom:.8rem; }
+.workshop-level-preview { margin-block:1.25rem; }
+.workshop-level-preview summary { color:var(--ink); font-weight:700; cursor:pointer; }
+.workshop-level-preview figure { max-width:32rem; margin:1rem 0; }
+.workshop-level-preview img { display:block; max-width:100%; max-height:32rem; margin:auto; border-radius:12px; }
+.workshop-level-preview figcaption { margin-top:.5rem; }

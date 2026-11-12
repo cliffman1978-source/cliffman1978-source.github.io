@@ -2,10 +2,26 @@
   'use strict';
   const lab = document.querySelector('#puzzle-practice');
   const lessons = JSON.parse(document.querySelector('#practice-data').textContent);
-  const mode = lab.querySelector('select');
+  const mode = lab.querySelector('#practice-mode');
+  const pieces = lab.querySelector('#practice-pieces');
   const board = lab.querySelector('.practice-board');
   const feedback = lab.querySelector('[role="status"]');
   const gems = ['Blue flower', 'Red flower', 'Green flower', 'Yellow flower', 'Purple flower'];
+  // In-game WorldGameplayArt.portrait_name(16, kind) for kinds 0 through 4.
+  const characters = ['Lyra', 'Sami', 'Hazel', 'Plume', 'Tavi'];
+  const usesFaces = () => pieces.value === 'characters';
+  function pieceWords(words) {
+    if (!usesFaces()) return words;
+    return words.replaceAll('power gems','powers').replaceAll('power gem','power')
+      .replaceAll('same-colour gems','matching faces').replaceAll('of its colour','matching faces')
+      .replaceAll('one colour','one character').replace(/gems|flowers/g,'faces').replace(/gem/g,'face')
+      .replace(/Gems|Flowers/g,'Faces');
+  }
+  function voiceFile(cue) {
+    const prefix = 'assets/puzzle-voice/' + (usesFaces() ? 'portraits/' : '');
+    if (usesFaces() && cue === 'correct') return prefix + 'correct.mp3';
+    return prefix + mode.value + (cue === 'rule' ? '' : '-' + cue) + '.mp3';
+  }
   const voice = lab.querySelector('audio');
   const speechButtons = [...lab.querySelectorAll('[data-cue]')];
   const speakCorrect = lab.querySelector('#speak-correct');
@@ -39,7 +55,7 @@
     voice.pause();
     if (stop) { updateSpeech(); return; }
     cue = button.dataset.cue;
-    voice.src = 'assets/puzzle-voice/' + key() + (cue === 'tip' ? '-tip' : '') + '.mp3';
+    voice.src = voiceFile(cue);
     voice.play().catch(error => {
       if (!result.length && error.name !== 'AbortError') feedback.textContent = 'The recording could not play. The puzzle rules are written beside the board.';
       updateSpeech();
@@ -134,18 +150,19 @@
       button.classList.toggle('target',selected!==null && key()==='star_hop' && legal(selected,i));
       button.classList.toggle('hit',result.includes(i));button.classList.toggle('hinted',hinted.includes(i));
       button.setAttribute('aria-pressed',String(selected===i));
-      button.setAttribute('aria-label',gems[tiles[i]]+', row '+(Math.floor(i/4)+1)+', column '+(i%4+1)+(button.classList.contains('target')?', hop destination':'')+(result.includes(i)?', matched':''));
+      button.setAttribute('aria-label',(usesFaces() ? characters : gems)[tiles[i]]+', row '+(Math.floor(i/4)+1)+', column '+(i%4+1)+(button.classList.contains('target')?', hop destination':'')+(result.includes(i)?', matched':''));
     });
   }
   function reset() {
     const lesson=lessons.find(l=>l.mode===key());
-    voice.pause();cue=null;updateSpeech();voice.src='assets/puzzle-voice/'+key()+'.mp3';voice.setAttribute('aria-label','Listen to '+lesson.title+' instructions');
-    lab.querySelector('.practice-rule').textContent=lesson.controls;
-    lab.querySelector('.practice-details').textContent=lesson.details;
+    voice.pause();cue=null;updateSpeech();voice.src=voiceFile('rule');voice.setAttribute('aria-label','Listen to '+lesson.title+' instructions');
+    board.dataset.pieces = pieces.value;
+    lab.querySelector('.practice-rule').textContent=pieceWords(lesson.controls);
+    lab.querySelector('.practice-details').textContent=pieceWords(lesson.details);
     tiles=Array.from(layouts[key()]||layouts.swap,Number);
     for(const cell of board.children) cell.firstElementChild.getAnimations?.().forEach(animation=>animation.cancel());
     feedback.classList.toggle('practice-success',false);
-    selected=null;result=[];hinted=[];feedback.textContent=isGroup()?'Pick a connected group to clear.':'Pick your first gem.';
+    selected=null;result=[];hinted=[];feedback.textContent=isGroup()?'Pick a connected group to clear.':pieceWords('Pick your first gem.');
     draw();
   }
   function pick(i) {
@@ -158,22 +175,22 @@
       else feedback.textContent='That group has '+hits.length+'. Look for at least '+minimum()+' that connect under this rule.';
     } else if(selected===null || selected===i) {
       selected=selected===i?null:i;
-      feedback.textContent=selected===null?'Pick your first gem.':key()==='star_hop'?'Choose a gold-ringed destination.':'Pick the second gem to make your move.';
+      feedback.textContent=pieceWords(selected===null?'Pick your first gem.':key()==='star_hop'?'Choose a gold-ringed destination.':'Pick the second gem to make your move.');
     } else if(!legal(selected,i)) {
-      feedback.textContent=key()==='star_hop'?'Try one of the gold rings.':key()==='row_shift'?'Pick the next gem in this row.':key()==='column_shift'?'Pick the next gem in this column.':'Pick a neighbouring gem.';
+      feedback.textContent=pieceWords(key()==='star_hop'?'Try one of the gold rings.':key()==='row_shift'?'Pick the next gem in this row.':key()==='column_shift'?'Pick the next gem in this column.':'Pick a neighbouring gem.');
     } else {
       const attempt=move(selected,i);
       if(attempt.hits.length) {tiles=attempt.next;result=attempt.hits;origins=attempt.origins;}
-      else feedback.textContent='That move made no line of three. The gems return to their starting places. Try another move.';
+      else feedback.textContent=pieceWords('That move made no line of three. The gems return to their starting places. Try another move.');
       selected=null;
     }
     if(result.length) {
       feedback.classList.toggle('practice-success',true);
-      feedback.textContent='✓ Correct move! '+confirmationLines[key()]+' '+result.length+' gems matched.';
+      feedback.textContent='✓ Correct move! '+pieceWords(confirmationLines[key()]+' '+result.length+' gems matched.');
       if (speakCorrect.checked) {
         voice.pause();
         cue='correct';
-        voice.src='assets/puzzle-voice/'+key()+'-correct.mp3';
+        voice.src=voiceFile('correct');
         voice.play().catch(() => {}); // The visible confirmation remains available.
       }
     }
@@ -226,6 +243,7 @@
       event.stopImmediatePropagation();
     }
   }, true);
+  pieces.addEventListener('change',reset);
   mode.addEventListener('change',reset);lab.querySelector('.practice-hint').addEventListener('click',hint);
   lab.querySelector('.practice-reset').addEventListener('click',reset);reset();lab.hidden=false;
 })();
