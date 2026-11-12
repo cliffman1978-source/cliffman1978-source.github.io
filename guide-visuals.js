@@ -2,9 +2,9 @@
    DifficultyBadge.gd. Examples never affect game progress or award prizes. */
 (()=>{'use strict';
 const TAU=Math.PI*2;
-const bonusScenery={FIREFLY:'realm-update/hero.webp',FLIGHT:'realm-update/hero.webp'};
+const bonusScenery={FIREFLY:'realm-update/journal-coral-kingdom.webp',FLIGHT:'realm-update/journal-coral-kingdom.webp'};
 const images=new Map(), reduced=matchMedia('(prefers-reduced-motion: reduce)');
-function asset(key){const path=key.includes('/')||key.endsWith('.webp')?key:'icons/'+key.toLowerCase()+'.webp';if(!images.has(path)){const i=new Image();i.src='assets/'+path;images.set(path,i);}return images.get(path);}
+function asset(key){const path=key.includes('/')||key.endsWith('.webp')?key:'icons/'+key.toLowerCase()+'.webp';if(!images.has(path)){const i=new Image();i.src='assets/'+path+(path.startsWith('icons/')?'?v=realm-art-2':'');images.set(path,i);}return images.get(path);}
 const clamp=v=>Math.max(0,Math.min(1,v)), smooth=(a,b,t)=>{const v=clamp((t-a)/(b-a));return v*v*(3-2*v);}, lerp=(a,b,t)=>a+(b-a)*t;
 function render(canvas,kind,time){const c=canvas.getContext('2d');c.setTransform(3,0,0,3,0,0);c.clearRect(0,0,300,160);const t=time%5,a=smooth(1,2.5,t);
 function text(s,x,y,size=12,color='#23483e'){c.fillStyle=color;c.font='600 '+size+'px system-ui,sans-serif';c.textAlign='center';c.fillText(s,x,y);}
@@ -88,27 +88,59 @@ icon(kind,38,72-Math.sin(a*Math.PI)*8,26);for(let y=0;y<5;y++)for(let x=0;x<5;x+
  scene('map',4,4,292,126);
  text(a<.6?'OPEN MY MAP':'TAP A PARCEL OR OPEN THE TRAIL',150,149,11);
 }else if(kind==='FORK'){
- const labels=['Gold fare','Gold fare','1 ad','2 ads'];
- labels.forEach((label,i)=>{
-  const x=20+(i%2)*132,y=21+Math.floor(i/2)*50;
-  box(x,y,125,40,['#ffd47e','#ffd47e','#b8e9dc','#d9c6eb'][i]);
-  text(label,x+62,y+25,14);
- });
- if(a>.4)pointer(101,50);
- text('CHOOSE A ROUTE FOR FIVE LEVELS',150,146,11);
+ scene('story-routes',4,3,292,125);
+ text(t<2.5?'CHECK THE GOLD FARE OR AD COUNT':'CHOOSE A ROUTE FOR FIVE LEVELS',150,146,11);
 }else if(kind==='DETAIL'){
  scene('hero',0,0,300,128);
  text(t<2.3?'CHOOSE A LANDMARK DESIGN':'FOLLOW THE PLACEMENT PROMPT',150,149,11);
 }else if(kind==='SHOP'){icon('COINS',50,68,27);icon('HAMMER',250,68,27);box(103,48,94,38,'#f8d879');text('BUY',150,73,16);pointer(177,77);text('CHECK PRICE → CONFIRM → INVENTORY',150,141,10);
-}else if(['PAIRS','DISCOVERY','SLOTS','WHEEL'].includes(kind)){
- const prompts={
-  PAIRS:['TURN OVER TWO CARDS','FIND ALL TEN MATCHING PAIRS'],
-  DISCOVERY:['COMPARE BOTH PICTURES','TAP EIGHT CHANGED DETAILS'],
-  SLOTS:['CHOOSE YOUR STAKE AND SPIN','CHECK THE FIVE PAYLINES'],
-  WHEEL:['TAP TO SPIN','THE TOP POINTER MARKS YOUR PRIZE']
- };
- scene(kind.toLowerCase(),4,3,292,125);
- text(prompts[kind][a>.5?1:0],150,147,11);
+}else if(kind==='PAIRS'){
+ const turned=[smooth(.4,1,t),smooth(1.3,2,t)];
+ turned.forEach((flip,i)=>{
+  const x=103+i*94,y=64,scale=Math.max(.06,Math.abs(Math.cos(flip*Math.PI)));
+  c.save();c.translate(x,y);c.scale(scale,1);
+  if(flip<.5)icon('practice/butterfly-card.webp',0,0,47);
+  else {box(-32,-42,64,84,'#fff4d7','#c9a669');icon('realm-update/pair-amber.webp',0,0,28);}
+  c.restore();
+ });
+ if(t>2.2&&t<3)burst(150,67,44);
+ text(t<2?'TURN OVER TWO CARDS':'A MATCH: TWO QUEEN AMBER CARDS',150,146,11);
+}else if(kind==='DISCOVERY'){
+ for(let side=0;side<2;side++){
+  const image=asset('practice/discovery-0-'+side+'.webp');
+  if(!image.complete||!image.naturalWidth)continue;
+  const x=4+side*148,y=16,w=144,h=96;
+  c.drawImage(image,x,y,w,h);
+  if(t>2.1)circle(x+w*.775,y+h*.362,14+Math.sin(t*3),null,'#f52179');
+ }
+ text(t<2.1?'COMPARE THE TWO BAKERY PICTURES':'THE STRIPES ON THE AWNING CHANGED',150,146,10);
+}else if(kind==='SLOTS'){
+ const cabinet=asset('practice/firefly-cabinet.webp');
+ if(cabinet.complete&&cabinet.naturalWidth)c.drawImage(cabinet,19,1,262,128);
+ const types=['HAMMER','COMPASS','COINS','LIGHTNING','HINT'];
+ for(let row=0;row<3;row++)for(let col=0;col<5;col++){
+  const x=64+col*43,y=28+row*35;
+  box(x-19,y-15,38,30,'#fff3d9','#bf9b78');
+  const stopped=t>1.3+col*.17;
+  const symbol=stopped&&row===1?'COINS':types[(col+2*row+(stopped?0:Math.floor(t*14)))%5];
+  icon(symbol,x,y,13);
+ }
+ if(t>2.3)line(42,63,257,63,'#da9a286b',3);
+ text(t<2.3?'SPIN THE FIVE REELS':'THE MIDDLE PAYLINE MATCHES',150,147,11);
+}else if(kind==='WHEEL'){
+ const centre=[150,66],radius=58,rotation=(1-Math.pow(1-a,3))*2*TAU;
+ const face=asset('practice/petal-wheel.svg');
+ c.save();c.translate(...centre);c.rotate(rotation-Math.PI/2-TAU/24);
+ if(face.complete&&face.naturalWidth)c.drawImage(face,-radius,-radius,2*radius,2*radius);
+ c.restore();
+ const prizes=['COINS','COINS','HINT','SHUFFLE','HAMMER','BOMB','COINS','COINS','LIGHTNING','RAINBOW','TIME','HAMMER'];
+ prizes.forEach((prize,i)=>{
+  const angle=rotation-Math.PI/2+i*TAU/12;
+  icon(prize,centre[0]+Math.cos(angle)*radius*.67,centre[1]+Math.sin(angle)*radius*.67,8.5);
+ });
+ circle(...centre,12,'#f0c170','#b58542');icon('realm-update/pair-pip.webp',...centre,12);
+ c.fillStyle='#9c7336';c.beginPath();c.moveTo(142,5);c.lineTo(158,5);c.lineTo(150,20);c.closePath();c.fill();
+ text(t<2.5?'TAP THE WHEEL TO SPIN':'THE POINTER STOPS ON 50 COINS',150,147,11);
 }else if(kind==='TOKEN'){icon('WHEEL',51,70,26);arrow([[89,70],[124,70]]);icon('INVENTORY',161,70,29);arrow([[199,70],[222,70]]);icon('WHEEL',253,70,24);text('SAVED TOKEN → INVENTORY → REPLAY',150,143,10);
 }else if(kind==='BUILD'){
  scene('map',4,3,292,125);
@@ -116,7 +148,7 @@ icon(kind,38,72-Math.sin(a*Math.PI)*8,26);for(let y=0;y<5;y++)for(let x=0;x<5;x+
  text(['FOUNDATION · 4 BUILD COINS','FRAMEWORK · 6 BUILD COINS','FINISH · 10 BUILD COINS'][stage],150,149,11);
 }else if(kind==='INVENTORY'){['HAMMER','RAINBOW','LIFE','WHEEL','DISCOVERY','PAIRS'].forEach((k,i)=>{const x=77+(i%3)*73,y=45+Math.floor(i/3)*65;box(x-28,y-26,56,54);icon(k,x,y,23);});text('BOOSTERS & LIVES · TOKENS',150,151,10);
 }else if(kind==='SETTINGS'){icon('SETTINGS',48,77,28);for(let i=0;i<2;i++){const y=52+i*53;text(i?'EFFECTS':'MUSIC',176,y-12,11);line(105,y+4,256,y+4,'#a5bcb0',6);circle(lerp(130,220,i?1-a:a),y+4,8,'#dbac4d','#9f7d38');}}
-else if(kind==='JOURNAL'){icon('BOOK',70,73,37);box(130,29,145,93);text('PIP’S JOURNAL',202,51,12);for(let i=0;i<3;i++)if(t>i*.7)line(146,70+i*13,256-(i%2)*25,70+i*13,'#79978b',3);text('READ · PAUSE · REVISIT',150,148,11);
+else if(kind==='JOURNAL'){scene('story',4,3,292,126);text(t<2.5?'OPEN MY STORY':'REVISIT YOUR CHAPTER NOTES',150,148,11);
 }else if(kind==='DAILY'){icon('GIFT',95,74,32);arrow([[140,74],[182,74]]);icon('COINS',230,74,24+a*5);if(a>.9)burst(230,74,35);text('CLAIM TODAY’S FREE GIFT',150,148,11);
 }else if(kind==='GIFT'){icon('WATCH',65,70,31);arrow([[110,70],[185,70]]);icon('GIFT',235,70,28+a*5);text('COMPLETE THE REQUIRED ADS → CLAIM',150,145,10);
 }else{icon('BOOK',55,65,28);box(105,38,170,60);text('TAP TO OPEN',190,70,15);pointer(200,86);text('BACK RETURNS YOU SAFELY',150,144,11);}

@@ -139,24 +139,47 @@
   }
   pairs.querySelector('.pair-reset').addEventListener('click',startPairs);startPairs();pairs.hidden=false;
   const discovery=$('.discovery-sample'), rows=discovery.querySelector('.discovery-rows');
+  const scenes = [
+    {target: 1, description: 'a bakery with a striped awning', detail: 'The stripes on the bakery awning changed.'},
+    {target: 3, description: 'a harbour with a sailing boat', detail: 'The sailing boat’s sail changed.'},
+    {target: 2, description: 'a cloud cottage with a starry porch', detail: 'The cottage door changed colour.'}
+  ];
+  const quadrants = ['upper left', 'upper right', 'lower left', 'lower right'];
+  let previousScene = -1;
   function startDiscovery() {
-    const icons=shuffle(['lantern','compass','hammer','rainbow','gift','book','coins']);
-    const changed=Math.floor(Math.random()*4);
-    let won=false;rows.replaceChildren();
-    for(let row=0;row<2;row++){
-      const group=document.createElement('div');group.setAttribute('role','group');group.setAttribute('aria-label',row?'Second picture':'First picture');
-      for(let i=0;i<4;i++){
-        const icon=icons[row===1 && i===changed?4:i];
-        const b=document.createElement('button');b.type='button';b.setAttribute('aria-label',(row?'Second':'First')+' row, item '+(i+1)+', '+icon);
-        const img=document.createElement('img');img.src='assets/icons/'+icon+'.webp';img.alt='';b.append(img);group.append(b);
-        b.addEventListener('click',()=>{
-          if(won)return;won=i===changed;
-          discovery.querySelector('[role=status]').textContent=won?'Found it! The '+icons[i]+' changed to '+icons[4]+'.':'Those items match. Compare the other columns.';
-          if(won)for(const line of rows.children)line.children[i].classList.add('found');
+    const choices = scenes.map((_, i) => i).filter(i => i !== previousScene);
+    const sceneIndex = choices[Math.floor(Math.random() * choices.length)];
+    previousScene = sceneIndex;
+    const scene = scenes[sceneIndex];
+    const status = discovery.querySelector('[role=status]');
+    let won = false;
+    rows.replaceChildren();
+    for (let side = 0; side < 2; side++) {
+      const panel = document.createElement('div');
+      panel.className = 'discovery-painting';
+      panel.setAttribute('role', 'group');
+      const title = (side ? 'Second' : 'First') + ' picture of ' + scene.description;
+      panel.setAttribute('aria-label', title);
+      panel.style.backgroundImage = 'url("assets/practice/discovery-' + sceneIndex + '-' + side + '.webp")';
+      quadrants.forEach((position, index) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.setAttribute('aria-label', title + ', ' + position);
+        button.addEventListener('click', () => {
+          if (won) return;
+          if (index !== scene.target) {
+            status.textContent = 'Those details match. Try another part of either picture.';
+            return;
+          }
+          won = true;
+          for (const painting of rows.children) painting.children[index].classList.add('found');
+          status.textContent = 'Found it! ' + scene.detail;
         });
-      }rows.append(group);
+        panel.append(button);
+      });
+      rows.append(panel);
     }
-    discovery.querySelector('[role=status]').textContent='Compare the two rows. Tap the item that changed.';
+    status.textContent = 'Compare the two pictures and tap the area that changed. You can choose the same area with the keyboard.';
   }
   discovery.querySelector('.discovery-reset').addEventListener('click',startDiscovery);startDiscovery();discovery.hidden=false;
 })();

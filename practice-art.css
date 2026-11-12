@@ -1,0 +1,64 @@
+/* Native board and cabinet artwork shared with the Android release. */
+.wheel-practice .spin-stage {
+  background: linear-gradient(#fff0d666,#fff3e099),url('assets/realm-update/journal-copperleaf-railway.webp') center/cover;
+}
+.wheel-practice .wheel-face {
+  background: #dbbb76;
+  border: 4px solid #dfb776;
+  box-shadow: 0 0 0 3px #f8e4ae, 0 0 0 7px #a99186, 0 5px 14px 7px #67503d55;
+  isolation: isolate;
+}
+.wheel-face::before {
+  content: '';
+  position: absolute;
+  inset: -1%;
+  background: url('assets/practice/petal-wheel.svg') center/contain no-repeat;
+  transform: rotate(-105deg);
+  z-index: -1;
+}
+.wheel-practice .spin-stage::before {
+  width: min(17%,56px);
+  z-index: 1;
+  background: #e5af53 url('assets/realm-update/pair-pip.webp') center/contain no-repeat;
+  border-color: #f9e2a5;
+}
+.wheel-practice .spin-stage::after { z-index: 2; border-top-color:#fff1ae; }
+.wheel-face .wheel-spoke { padding:0; transform:rotate(var(--spoke-angle)); }
+.wheel-face .wheel-spoke img, .wheel-face .wheel-amount {
+  position:absolute;
+  transform:rotate(calc(0deg - var(--spoke-angle) - var(--rest-angle,0deg)));
+}
+.wheel-face .wheel-spoke img { width:14%; height:14%; object-fit:contain; top:16%; }
+.wheel-face .wheel-amount {
+  top:6.5%; border-radius:.5em; padding:.12em .25em; min-width:1.4em;
+  color:#fff7da; background:#3e414b; font:bold clamp(.64rem,2.6vw,.82rem)/1 system-ui;
+}
+.slots-practice .spin-stage {
+  padding:clamp(24px,5.5%,45px) clamp(20px,7%,55px);
+  background:transparent url('assets/practice/firefly-cabinet.webp') center/100% 100% no-repeat;
+}
+.practice-reels { padding:4px; background:#654c59; border-radius:8px; gap:3px; }
+.practice-reels img { background:linear-gradient(#faeed6,#fffaf0 50%,#edddbf); }
+.pair-cards button { height:clamp(64px,11vw,82px); }
+.pair-cards button:not(.revealed) {
+  border:0; box-shadow:none; background:transparent url('assets/practice/butterfly-card.webp') center/contain no-repeat;
+}
+.pair-cards button:not(.revealed) span { visibility:hidden; }
+.pair-cards button.revealed img { width:100%; height:100%; min-height:0; }
+.discovery-rows {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,165px),1fr)); gap:6px;
+}
+.discovery-rows > .discovery-painting {
+  width:100%; max-width:none; aspect-ratio:3/2; margin:0;
+  display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-rows:1fr 1fr; gap:0;
+  border:2px solid #d4aa69; border-radius:9px; overflow:hidden; background-size:100% 100%;
+}
+.discovery-rows .discovery-painting button {
+  padding:0; background:none; border:0; border-radius:0; cursor:crosshair;
+}
+.discovery-rows .discovery-painting button:focus-visible {
+  outline:3px solid #fff; outline-offset:-4px; box-shadow:inset 0 0 0 6px #395753;
+}
+.discovery-rows .discovery-painting button.found {
+  outline:3px solid #ffec9a; outline-offset:-4px; box-shadow:inset 0 0 0 6px #5d8862;
+}

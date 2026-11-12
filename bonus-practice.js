@@ -4,7 +4,7 @@
   const pick = count => Math.floor(Math.random() * count);
   const image = name => {
     const icon = new Image();
-    icon.src = 'assets/icons/' + name + '.webp';
+    icon.src = 'assets/icons/' + name + '.webp?v=realm-art-2';
     icon.alt = '';
     return icon;
   };
@@ -38,8 +38,11 @@
   prizes.forEach(([name, amount], i) => {
     const spoke = document.createElement('div');
     spoke.className = 'wheel-spoke';
-    spoke.style.transform = 'rotate(' + i * 30 + 'deg)';
-    spoke.append(image(name), String(amount));
+    spoke.style.setProperty('--spoke-angle', (i * 30) + 'deg');
+    const quantity = document.createElement('span');
+    quantity.className = 'wheel-amount';
+    quantity.textContent = name === 'coins' ? String(amount) : '×' + amount;
+    spoke.append(quantity, image(name));
     face.append(spoke);
   });
   let angle = 0;
@@ -54,6 +57,7 @@
     }
     angle = end;
     face.style.transform = rotate(angle);
+    face.style.setProperty('--rest-angle', angle + 'deg');
     const [name, amount] = prizes[index];
     const label = name === 'time' ? 'time / move booster' : name;
     return 'Practice prize: ' + amount + ' ' + label + (amount > 1 && name !== 'coins' ? 's' : '') + '.';
@@ -81,7 +85,7 @@
         await cell.animate([{transform:'translateY(-22%)',opacity:.2},{transform:'none',opacity:1}],
           {duration, iterations:3}).finished;
       }
-      cell.src = 'assets/icons/' + grid[i] + '.webp';
+      cell.src = 'assets/icons/' + grid[i] + '.webp?v=realm-art-2';
       cell.alt = grid[i];
     }));
     let total = 0, wins = 0;
