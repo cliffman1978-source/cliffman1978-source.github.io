@@ -201,7 +201,17 @@
   },
   {
     "title": "MAP & STORY",
-    "body": "Open Menu → Worlds → My World Map to explore all 50 realms. My Map returns to your current town; Quests opens your tasks and unclaimed rewards. Pick any unlocked trail number and tap Play. After level 10, one puzzle per ten uses portraits. Match identical faces with the usual rules. Replays keep the same cast. In the journal, Choose a route shows four destinations for a five-level chapter. Blue is free, mint requires one rewarded ad, lavender requires two, and gold shows the coin price. Your saved route sets the story and puzzle realm for those levels. Your ending changes the places offered next chapter.",
+    "body": "Open Menu → Worlds → My World Map to explore all 50 realms. My Map returns to your current town; Quests opens your tasks and unclaimed rewards. Pick any unlocked trail number and tap Play. After level 10, one puzzle per ten uses portraits. Match identical faces with the usual rules. Replays keep the same cast.",
+    "category": "Worlds & quests"
+  },
+  {
+    "title": "CHOOSE YOUR ADVENTURE",
+    "body": "Open My Story and read to the fork. Choose one of four destinations for this five-level chapter. Two routes cost the gold shown. Mint takes one rewarded ad and lavender takes two. Read the clue and choose an ending: it can add or cost gold and affects the next chapter’s destinations.",
+    "category": "Worlds & quests"
+  },
+  {
+    "title": "PLACE A LANDMARK DETAIL",
+    "body": "After the ending, open the chapter’s worksite. Pick a design for the stage and check its gold fare or ad count. Follow the placement prompt to see the detail on your landmark. Chapter notes let you revisit earlier choices.",
     "category": "Worlds & quests"
   },
   {
@@ -236,12 +246,12 @@
   },
   {
     "title": "DAILY DISCOVERY",
-    "body": "Open Discovery beside Wheel and Slots. Compare both pictures and tap a changed detail in either one. Pinch to zoom and drag to inspect. Find eight changes before your misses run out. Your first hint in each round is free; later hints cost 50 coins. A pink ring marks the detail; viewing an existing hint again is free. The play count includes this realm’s free or unfinished scene plus saved Discovery tokens. The first three completed scenes across all realms each award 100 coins and one hint daily; further scenes are practice. Prizes reset at local midnight. New rounds use visible object changes: a missing piece, a different shape or a changed count. Subtle color or shading changes are not clues. The three most recent compositions are avoided. The previous five clue sets are avoided. Unfinished rounds keep your clues, hints and progress, including after midnight. A Discovery replay token starts a fresh round after a finished or failed scene with one free hint and an extra completion reward; use the token replay button on the Discovery result panel, or open Inventory → Tokens.",
+    "body": "Open Discovery beside Wheel and Slots. Compare both pictures and tap a changed detail in either one. Pinch to zoom and drag to inspect. Find eight changes before your misses run out. Your first hint in each round is free; later hints cost 50 coins. A pink ring marks the detail; viewing an existing hint again is free. The play count includes this realm’s free or unfinished scene plus saved Discovery tokens. The first three completed scenes across all realms each award 100 coins and one hint daily; further scenes are practice. Prizes reset at local midnight. New rounds use visible object changes: a missing piece, a different shape or a changed count. Look for changes in painted colours, shapes and details. The three most recent compositions are avoided. The previous five clue sets are avoided. Unfinished rounds keep your clues, hints and progress, including after midnight. Out of tries? One optional ad restores one mistake per round and keeps your finds. Watch one ad to start a fresh scene, or use a replay token. A Discovery replay token starts a fresh round after a finished or failed scene with one free hint and an extra completion reward; use the token replay button on the Discovery result panel, or open Inventory → Tokens.",
     "category": "Bonus games"
   },
   {
     "title": "DAILY PAIRS",
-    "body": "Open Pairs beside Wheel, Slots and Discovery, or in Menu → Bonus. Find ten matching pairs among 20 cards. New rounds rotate through all 50 friends; saved rounds keep their faces. Revealing two cards counts as one move. Finish in 10–12 moves for one rainbow booster, 13–20 for one hammer, 21–30 for 150 coins, or 31+ for 75 coins. Unfinished six-pair rounds keep their original reward thresholds. No entry fee, timer or life cost. Cards flip as you reveal them; matching pairs sparkle. Mismatches stay visible briefly. Cards and moves save when you leave. One completed round per local day; unfinished rounds resume after midnight and use the completion day's allowance. Rewards save automatically; the last pair celebrates before the prize panel opens. Close the panel to return. Badges count the free or unfinished round plus saved tokens. Extra rounds: buy a Pairs token in Coin Shop → Tokens or Market Place → Token Packs and use it directly in Pairs or Inventory → Tokens after completing today’s round.",
+    "body": "Open Pairs beside Wheel, Slots and Discovery, or in Menu → Bonus. Find ten matching pairs among 20 cards. New rounds rotate through all 50 friends; saved rounds keep their faces. Revealing two cards counts as one move. Finish in 10–12 moves for one rainbow booster, 13–20 for one hammer, 21–30 for 150 coins, or 31+ for 75 coins. Unfinished six-pair rounds keep their original reward thresholds. No entry fee, timer or life cost. Cards flip as you reveal them; matching pairs sparkle. Mismatches stay visible briefly. Cards and moves save when you leave. One completed round per local day; unfinished rounds resume after midnight and use the completion day's allowance. Rewards save automatically; the last pair celebrates before the prize panel opens. Close the panel to return. Badges count the free or unfinished round plus saved tokens. Watch one ad on the completed board for another round, or buy a Pairs token in Coin Shop → Tokens or Market Place → Token Packs and use it directly in Pairs or Inventory → Tokens after completing today’s round.",
     "category": "Bonus games"
   },
   {
@@ -256,12 +266,12 @@
   },
   {
     "title": "PRIZE WHEEL",
-    "body": "Tap Wheel on the map, then tap the wheel or Spin button. One earned spin or saved wheel token awards one of 12 equally likely prizes: coins or boosters, including rainbows, hammers and bombs. The pointer marks your reward. A win popup shows the matching reward icon and exact quantity; tap Continue to return to the wheel. Tap Rules for every quantity.",
+    "body": "Tap Wheel on the map, then tap the wheel or Spin button. When you have no spins, one optional ad adds one spin. One earned spin or saved wheel token awards one of 12 equally likely prizes: coins or boosters, including rainbows, hammers and bombs. The pointer marks your reward. A win popup shows the matching reward icon and exact quantity; tap Continue to return to the wheel. Tap Rules for every quantity.",
     "category": "Bonus games"
   },
   {
     "title": "TREASURE SLOTS",
-    "body": "Use −/+ to select 50–1,000 coins in steps of 25. Tap PRESET BETS to choose 50, 100, 250, 500 or 1,000 coins. MAX BET selects your highest affordable stake up to 1,000; choosing a stake does not spin. Tap Spin. Three horizontal and two diagonal paylines pay. Ordinary matches pay from either edge; the higher match on each payline pays once. Wild substitutes for ordinary symbols. Hints can start at three matches; other boosters need four, and rainbows need five. Coins scale with your bet; boosters do not.",
+    "body": "Use −/+ to select 50–1,000 coins in steps of 25. Tap PRESET BETS to choose 50, 100, 250, 500 or 1,000 coins. MAX BET selects your highest affordable stake up to 1,000; choosing a stake does not spin. Tap Spin. Three horizontal and two diagonal paylines pay. Ordinary matches pay from either edge; the higher match on each payline pays once. Wild substitutes for ordinary symbols. Hints can start at three matches; other boosters need four, and rainbows need five. Coins scale with your bet; boosters do not. Watch one ad for two free spins at a 50-coin stake.",
     "category": "Bonus games"
   },
   {
@@ -291,7 +301,7 @@
   },
   {
     "title": "WATCH & EARN",
-    "body": "Tap WATCH & EARN beside Coin Shop and Market Place at the bottom of My Map or the level trail. Choose a reward in Watch & Earn: one completed ad gives 1 life, 100 coins, 1 hint, 1 hammer or 1 shuffle. Two completed ads give 1 bomb, 1 lightning, 1 time/moves booster or 1 rainbow. Tap the same reward again for its second ad; the first ad’s progress stays saved for that reward. Only completed ads count toward the reward; closing early gives no reward credit. Each completed reward starts fresh. Lives fill missing hearts first; extra lives are saved. Ads are optional. Ads are offered only to players 18 or over after an age choice remembered on this device. Under-18 players and players who skip the choice can continue without ads. Open Watch & Earn → Ad Privacy Choices to change consent where available, or Privacy Policy in the shop or menu for details. Availability varies by platform and game version. Coming Soon means ads are not enabled in your build. Confirm each ad before it starts. All booster types are available for 1 or 2 ads. Maximum 10 ad starts per local day; resets at midnight. Closing early uses an ad without reward; partial two-ad progress carries over.",
+    "body": "Tap WATCH & EARN beside Coin Shop and Market Place at the bottom of My Map or the level trail. Choose a reward in Watch & Earn: one completed ad gives 1 life, 100 coins, 1 hint, 1 hammer or 1 shuffle. Two completed ads give 1 bomb, 1 lightning, 1 time/moves booster or 1 rainbow. Tap the same reward again for its second ad; the first ad’s progress stays saved for that reward. Only completed ads count toward the reward; closing early gives no reward credit. Each completed reward starts fresh. Lives fill missing hearts first; extra lives are saved. Ads are optional. Ads are offered only to players 18 or over after an age choice remembered on this device. Under-18 players and players who skip the choice can continue without ads. Open Watch & Earn → Ad Privacy Choices to change consent where available, or Privacy Policy in the shop or menu for details. Availability varies by platform and game version. Coming Soon means ads are not enabled in your build. When the wheel is empty, its ad button offers one spin. Out of Discovery tries, one ad restores one mistake per round and keeps your finds. After a puzzle failure, one ad can restore 5 moves or 30 seconds. All booster types are available for 1 or 2 ads. Maximum 15 ad starts per local day; resets at midnight. Closing early uses an ad without reward; partial two-ad progress carries over.",
     "category": "Shops & rewards"
   },
   {
@@ -311,7 +321,7 @@
   },
   {
     "title": "READ PIP'S JOURNAL",
-    "body": "Read the current realm's chapters and conversations. Earlier unlocked chapters stay available. Listen to the scene, pause, or skip ahead to Choose a route. Compare the destinations and gold fares before choosing. Open Chapter notes to revisit what happened.",
+    "body": "Open My Story and read the chapter. At the fork, choose one of four destinations. Gold routes show a coin fare. Mint takes one rewarded ad and lavender takes two. Your route sets the puzzle realm for five levels. Choose an ending, then visit the worksite to pick and place a landmark detail. Chapter notes remember your path.",
     "category": "Navigation guide"
   },
   {
@@ -321,17 +331,17 @@
   },
   {
     "title": "SPIN THE PRIZE WHEEL",
-    "body": "Use an earned spin first, then a saved wheel token. Every spin wins one of 12 equally likely prizes. The top pointer identifies the result. Tap Rules for exact prizes.",
+    "body": "Use an earned spin first, then a saved wheel token. Every spin wins one of 12 equally likely prizes. The top pointer identifies the result. Tap Rules for exact prizes. When spins run out, watch one available rewarded ad for one spin.",
     "category": "Navigation guide"
   },
   {
     "title": "PLAY TREASURE SLOTS",
-    "body": "Choose a coin stake before tapping Spin. Five paylines, Wilds and Bonus scatters determine the prize. Bonus rounds preserve their progress. Firefly Flight: rescue to earn; gust hits cost 25% bonus health. At zero health, keep only earned prizes. The pay table explains every reward.",
+    "body": "Check the coin amount beneath the reels, then tap Spin. Five paylines, Wilds and Bonus scatters determine the prize. Bonus rounds preserve their progress. Firefly Flight: rescue to earn; gust hits cost 25% bonus health. At zero health, keep only earned prizes. Tap the book on Paytable for symbols and payouts.",
     "category": "Navigation guide"
   },
   {
     "title": "EXPLORE DISCOVERY",
-    "body": "Compare two pictures and tap eight changed details in either image. Pinch to zoom and drag to inspect. The first hint is free; later hints cost 50 coins. A finished or failed round can use a replay token.",
+    "body": "Compare two pictures and tap eight changed details in either image. Pinch to zoom and drag to inspect. The first hint is free; later hints cost 50 coins. Out of tries? One optional rewarded ad restores one mistake per round and keeps your finds. A replay token starts a new round.",
     "category": "Navigation guide"
   },
   {
@@ -356,7 +366,7 @@
   },
   {
     "title": "WATCH & EARN",
-    "body": "Choose any booster, coins or a life and confirm before watching 1 or 2 ads. At most 10 ad starts per local day, resetting at midnight. Closing early uses an ad but gives no credit. Partial two-ad progress stays saved. Ads depend on availability and eligibility.",
+    "body": "Choose any booster, coins or a life and confirm before watching 1 or 2 ads. At most 15 ad starts per local day, resetting at midnight. Closing early uses an ad but gives no credit. Partial two-ad progress stays saved. Ads depend on availability and eligibility.",
     "category": "Navigation guide"
   },
   {

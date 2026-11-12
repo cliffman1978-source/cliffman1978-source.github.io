@@ -198,6 +198,34 @@
     const sprite=document.createElement('span');sprite.className='practice-gem';sprite.setAttribute('aria-hidden','true');button.append(sprite);
     button.addEventListener('click',()=>pick(i));board.append(button);
   }
+  // Tap controls remain available for keyboard and touch users. Directional
+  // swipes also work on the same neighbouring cells as the game.
+  let drag = null, ignorePointerClick = false;
+  const cellIndex = element => [...board.children].indexOf(element?.closest('button'));
+  board.addEventListener('pointerdown', event => {
+    ignorePointerClick = false;
+    const start = cellIndex(event.target);
+    if (event.button !== 0 || start < 0 || result.length || isGroup() || key() === 'star_hop') return;
+    drag = {id: event.pointerId, start, x: event.clientX, y: event.clientY};
+  });
+  board.addEventListener('pointercancel', () => { drag = null; });
+  board.addEventListener('pointerup', event => {
+    const swipe = drag;
+    drag = null;
+    if (!swipe || swipe.id !== event.pointerId) return;
+    const end = cellIndex(document.elementFromPoint(event.clientX, event.clientY));
+    if (end < 0 || end === swipe.start || Math.hypot(event.clientX-swipe.x,event.clientY-swipe.y) < 12) return;
+    ignorePointerClick = true;
+    selected = null;
+    pick(swipe.start);
+    pick(end);
+  });
+  board.addEventListener('click', event => {
+    if (event.detail !== 0 && ignorePointerClick) {
+      ignorePointerClick = false;
+      event.stopImmediatePropagation();
+    }
+  }, true);
   mode.addEventListener('change',reset);lab.querySelector('.practice-hint').addEventListener('click',hint);
   lab.querySelector('.practice-reset').addEventListener('click',reset);reset();lab.hidden=false;
 })();

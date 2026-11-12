@@ -55,7 +55,8 @@
     angle = end;
     face.style.transform = rotate(angle);
     const [name, amount] = prizes[index];
-    return 'Practice prize: ' + amount + ' ' + name + (amount > 1 && name !== 'coins' ? 's' : '') + '.';
+    const label = name === 'time' ? 'time / move booster' : name;
+    return 'Practice prize: ' + amount + ' ' + label + (amount > 1 && name !== 'coins' ? 's' : '') + '.';
   });
 
   const slots = document.querySelector('.slots-practice');

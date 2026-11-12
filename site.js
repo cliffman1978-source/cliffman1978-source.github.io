@@ -99,7 +99,7 @@
   $('.guide-tools').hidden=false;
   updateGuide();route();
 
-  const faces=['rowan','lyra','mara'];
+  const faces=['Pip','Rowan','Queen Amber'];
   const pairs=$('.pairs-sample'), cards=pairs.querySelector('.pair-cards');
   let deck, first=null, matched, turns, timeout;
   function shuffle(items) {
@@ -120,7 +120,7 @@
     clearTimeout(timeout);timeout=null;deck=shuffle([...faces,...faces]);first=null;matched=new Set();turns=0;
     cards.replaceChildren(...deck.map((face,i)=>{
       const b=document.createElement('button');b.type='button';
-      const img=document.createElement('img');img.src='assets/'+face+'.webp';img.alt='';
+      const img=document.createElement('img');img.src='assets/realm-update/pair-'+({'Pip':'pip','Rowan':'rowan','Queen Amber':'amber'}[face])+'.webp';img.alt='';
       const back=document.createElement('span');back.textContent='✦';b.append(img,back);
       b.addEventListener('click',()=>{
         if(timeout!==null || first===i || matched.has(i))return;
@@ -180,3 +180,15 @@ for (const audio of document.querySelectorAll('.tip-actions audio')) {
   audio.before(button);
   audio.hidden = true;
 }
+
+const castSearch = document.querySelector('#cast-search');
+const castCards = [...document.querySelectorAll('.cast-entry')];
+castSearch.addEventListener('input', () => {
+  const query = castSearch.value.trim().toLocaleLowerCase();
+  let count = 0;
+  for (const card of castCards) {
+    card.hidden = !card.textContent.toLocaleLowerCase().includes(query);
+    if (!card.hidden) count++;
+  }
+  document.querySelector('#cast-count').textContent = count === 1 ? '1 realm keeper' : count + ' realm keepers';
+});

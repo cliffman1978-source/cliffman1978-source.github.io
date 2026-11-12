@@ -1,8 +1,8 @@
 /* Browser adaptations of PuzzleLesson.gd, ItemLesson.gd, TeachingMotion.gd and
    DifficultyBadge.gd. Examples never affect game progress or award prizes. */
 (()=>{'use strict';
-const TAU=Math.PI*2, colors=['#35b9ed','#ee609d','#9c70d8','#f3bb37','#52bc8d'];
-const bonusScenery={WHEEL:'journal/copperleaf-railway.webp',SLOTS:'journal/aurora-palace.webp',PAIRS:'journal/paperwing-library.webp',DISCOVERY:'journal/coral-kingdom.webp',FIREFLY:'forest.webp',FLIGHT:'forest.webp'};
+const TAU=Math.PI*2;
+const bonusScenery={FIREFLY:'realm-update/hero.webp',FLIGHT:'realm-update/hero.webp'};
 const images=new Map(), reduced=matchMedia('(prefers-reduced-motion: reduce)');
 function asset(key){const path=key.includes('/')||key.endsWith('.webp')?key:'icons/'+key.toLowerCase()+'.webp';if(!images.has(path)){const i=new Image();i.src='assets/'+path;images.set(path,i);}return images.get(path);}
 const clamp=v=>Math.max(0,Math.min(1,v)), smooth=(a,b,t)=>{const v=clamp((t-a)/(b-a));return v*v*(3-2*v);}, lerp=(a,b,t)=>a+(b-a)*t;
@@ -14,8 +14,20 @@ function box(x,y,w,h,color='#fff7df',stroke='#c8b47c'){c.beginPath();c.roundRect
 function icon(key,x,y,r=25){const i=asset(key);if(i.complete&&i.naturalWidth){const s=2*r/Math.max(i.naturalWidth,i.naturalHeight);c.drawImage(i,x-i.naturalWidth*s/2,y-i.naturalHeight*s/2,i.naturalWidth*s,i.naturalHeight*s);}}
 function arrow(points){c.lineJoin='round';c.lineCap='round';for(const [color,w] of [['#334e49',5],['#ffe49a',2]]){c.strokeStyle=color;c.lineWidth=w;c.beginPath();points.forEach((p,i)=>i?c.lineTo(...p):c.moveTo(...p));c.stroke();const b=points.at(-1),a=points.at(-2),ang=Math.atan2(b[1]-a[1],b[0]-a[0]);for(const k of [-1,1])line(b[0],b[1],b[0]-9*Math.cos(ang+k*.55),b[1]-9*Math.sin(ang+k*.55),color,w);}}
 function pointer(x,y){circle(x,y,5,'#fff8d4','#b68026');circle(x,y,8+(time%1)*4,null,'#d5ad57');}
-// Forest-leaf silhouette from WorldGameplayArt, with layered highlights.
-function gem(x,y,color,r=13){if(r<.2)return;c.save();c.translate(x,y);c.beginPath();[[-.86,.85],[-.94,.12],[-.67,-.55],[-.12,-.83],[.86,-.96],[.95,-.18],[.67,.5],[.06,.8]].forEach((p,i)=>i?c.lineTo(p[0]*r,p[1]*r):c.moveTo(p[0]*r,p[1]*r));c.closePath();const g=c.createLinearGradient(-r,-r,r,r);g.addColorStop(0,'#fff');g.addColorStop(.3,colors[color%5]);g.addColorStop(1,'#235c60');c.fillStyle=g;c.shadowColor='#20474066';c.shadowBlur=2;c.shadowOffsetY=2;c.fill();c.shadowBlur=0;c.shadowOffsetY=0;c.strokeStyle=colors[color%5];c.lineWidth=1;c.stroke();line(-r*.5,r*.5,r*.5,-r*.55,'#ffffff99',1.5);circle(-r*.3,-r*.4,r*.15,'#ffffffb0');c.restore();}
+// The same five Sunflower Valley pieces used on the practice board.
+function gem(x,y,color,r=13){
+ const sheet=asset('workshop/sunflower-gems.webp');
+ if(r<.2||!sheet.complete||!sheet.naturalWidth)return;
+ const side=sheet.naturalWidth/5;
+ c.drawImage(sheet,(color%5)*side,0,side,sheet.naturalHeight,x-r,y-r,2*r,2*r);
+}
+function scene(name,x,y,w,h){
+ const picture=asset('realm-update/'+name+'.webp');
+ if(!picture.complete||!picture.naturalWidth)return;
+ const scale=Math.min(w/picture.naturalWidth,h/picture.naturalHeight);
+ const width=picture.naturalWidth*scale,height=picture.naturalHeight*scale;
+ c.drawImage(picture,x+(w-width)/2,y+(h-height)/2,width,height);
+}
 function burst(x,y,r){for(let i=0;i<10;i++){const k=i*TAU/10+time;circle(x+Math.cos(k)*r,y+Math.sin(k)*r,2,'#dca937');}}
 function puzzle(mode){let grid=[[0,3,0],[3,0,2],[2,4,1]],start=[1,1],end=[1,0],group=[];
 if(mode==='diagonal_swap'){grid=[[0,0,3],[3,0,2],[2,4,1]];end=[2,0];}
@@ -34,8 +46,13 @@ if(mode==='rising_tides'&&t>3.1){const rise=smooth(3.1,3.8,t);c.save();c.beginPa
 if(mode==='star_hop'&&move===0)circle(...pos(end),16,null,'#c8982d');
 if(t<2.5){let finger=group.length?group.at(-1):[lerp(start[0],end[0],move),lerp(start[1],end[1],move)];if(mode==='star_hop')finger=move<2/3?[lerp(start[0],end[0],move*1.5),start[1]]:[end[0],lerp(start[1],end[1],(move-2/3)*3)];if(!group.length&&move<.2){const points=mode==='star_hop'?[pos(start),pos([end[0],start[1]]),pos(end)]:[pos(start),pos(end)];arrow(points);}pointer(...pos(finger));}
 text(t<1.8?(group.length?(mode==='cross_gather'?'TAP THE CENTRE':'TAP THE GROUP'):mode==='row_shift'?'SHIFT LEFT ONE SPACE':mode==='column_shift'?'SHIFT UP ONE SPACE':mode==='star_hop'?'SWAP THE L ENDPOINTS':mode==='diagonal_swap'?'SWAP DIAGONALLY':'WATCH THE MOVE'):t<2.5?'MATCH!':t<3.1?'GEMS CLEAR':mode==='rising_tides'&&t<3.8?'GEMS RISE':'WATCH AGAIN',150,146,11);}
-function badge(rank,x=150,y=69,r=39){const n=rank<0?12:rank===0?32:rank===1?8:rank===2?4:rank===3?6:10;c.beginPath();for(let i=0;i<n;i++){let dx,dy;if(rank===1){[dx,dy]=[[-.7,-1],[.7,-1],[1,-.7],[1,.7],[.7,1],[-.7,1],[-1,.7],[-1,-.7]][i];dx*=.85;dy*=.85;}else{const rad=(rank<0&&i%2?.8:rank===4&&i%2?.56:1);dx=Math.cos(-Math.PI/2+i*TAU/n)*rad;dy=Math.sin(-Math.PI/2+i*TAU/n)*rad;}i?c.lineTo(x+dx*r,y+dy*r*.88):c.moveTo(x+dx*r,y+dy*r*.88);}c.closePath();const g=c.createLinearGradient(x-r,y-r,x+r,y+r);g.addColorStop(0,'#b4ecce');g.addColorStop(1,'#318673');c.fillStyle=g;c.fill();c.strokeStyle='#d5ad64';c.lineWidth=5;c.stroke();circle(x+Math.cos(time)*r*.8,y+Math.sin(time)*r*.7,2,'#fff3bc');}
-box(1,1,298,158,'#edf5ec','#d4deca');
+function badge(rank,x=150,y=69,r=43){
+ const sheet=asset('workshop/trail-markers.webp');
+ if(!sheet.complete||!sheet.naturalWidth)return;
+ const tile=sheet.naturalWidth/3,index=rank+1;
+ c.drawImage(sheet,(index%3)*tile,Math.floor(index/3)*tile,tile,tile,x-r,y-r,2*r,2*r);
+}
+box(1,1,298,158,'#fff5dd','#dcc591');
 if(bonusScenery[kind]){
  const scene=asset(bonusScenery[kind]);
  if(scene.complete&&scene.naturalWidth){
@@ -51,7 +68,7 @@ if(kind.startsWith('MODE:')){puzzle(kind.slice(5));return;}
 if(kind==='MATCH'){puzzle('swap');return;}
 if(['HAMMER','BOMB','LIGHTNING','RAINBOW','SHUFFLE','HINT'].includes(kind)){
 icon(kind,38,72-Math.sin(a*Math.PI)*8,26);for(let y=0;y<5;y++)for(let x=0;x<5;x++){let col=(x+y*2)%5,px=105+x*24,py=23+y*24;if(kind==='HINT'){if(y===1&&[1,3].includes(x))col=0;if(x===2&&y===1)col=3;if(x===2&&y===2)col=0;}if(kind==='SHUFFLE'){px+=Math.sin(a*TAU+x)*8*Math.sin(a*Math.PI);py+=Math.sin(a*TAU+y)*8*Math.sin(a*Math.PI);if(a===1)col=(col+2)%5;}const hit=kind==='HAMMER'?x===2&&y===2:kind==='BOMB'?Math.abs(x-2)<=1&&Math.abs(y-2)<=1:kind==='LIGHTNING'?x===2||y===2:kind==='RAINBOW'?(x+y*2)%5===1:false;gem(px,py,col,10*(hit?1-a*(1-smooth(3.5,4.4,t)):1));if(kind==='HINT'&&x===2&&[1,2].includes(y))circle(px,py,12,null,'#bd8b23');}if(kind==='HINT')arrow([[153,71],[153,47]]);text(kind==='HINT'?'SWAP UP TO MAKE THREE':kind==='SHUFFLE'?'MIX GEMS · KEEP YOUR GOALS':kind==='HAMMER'?'ONE SELECTED TILE':kind==='BOMB'?'3 × 3 AREA':kind==='LIGHTNING'?'ONE ROW + ONE COLUMN':'EVERY GEM OF ONE COLOUR',150,146,10);
-}else if(kind==='FIREFLY'||kind==='FLIGHT'){const hit=t>=3,rescued=t>=1.5;let x=t<1.5?lerp(35,105,smooth(0,1.5,t)):lerp(105,185,smooth(1.8,3,t));for(let i=0;i<3;i++)if(i||!rescued){circle(105+i*35,64+Math.sin(i)*18,9,'#ffe59c');circle(105+i*35,64+Math.sin(i)*18,3,'#dca72a');}for(let i=0;i<3;i++){c.beginPath();c.arc(213,75,10+i*5,time+i,time+i+Math.PI*1.5);c.strokeStyle='#976bc4';c.lineWidth=2;c.stroke();}icon(hit?'pip-sad.webp':'pip.webp',x-(hit?14:0),70+(hit?8:0),26);text('HEALTH: '+(hit?'75%':'100%'),150,23,13);text(hit?'GUST HIT: −25%':'STEER TO RESCUE',150,126,12);text(rescued?'EARNED: 1 / 15 OF THE COIN PRIZE':'EARNED: 0 COINS',150,146,10);
+}else if(kind==='FIREFLY'||kind==='FLIGHT'){const hit=t>=3,rescued=t>=1.5;let x=t<1.5?lerp(35,105,smooth(0,1.5,t)):lerp(105,185,smooth(1.8,3,t));for(let i=0;i<3;i++)if(i||!rescued){circle(105+i*35,64+Math.sin(i)*18,9,'#ffe59c');circle(105+i*35,64+Math.sin(i)*18,3,'#dca72a');}for(let i=0;i<3;i++){c.beginPath();c.arc(213,75,10+i*5,time+i,time+i+Math.PI*1.5);c.strokeStyle='#976bc4';c.lineWidth=2;c.stroke();}icon('realm-update/pip.webp',x-(hit?14:0),70+(hit?8:0),26);text('HEALTH: '+(hit?'75%':'100%'),150,23,13);text(hit?'GUST HIT: −25%':'STEER TO RESCUE',150,126,12);text(rescued?'EARNED: 1 / 15 OF THE COIN PRIZE':'EARNED: 0 COINS',150,146,10);
 }else if(kind.startsWith('OBSTACLE:')){const n=+kind.split(':')[1],ice=n===6;for(let i=0;i<3;i++)gem(85+i*36,ice?76:112,0,13);if(a<.85||n===13){if(ice)box(125,51,49,49,'#bdeaff88','#70b9db');if(n===7){box(125,45,49,49,'#b98951','#81562e');line(130,49,169,89,'#e7c185',5);line(169,49,130,89,'#e7c185',5);}if(n===12){for(let i=0;i<5;i++){c.beginPath();c.ellipse(135+i*8,65+Math.sin(i)*12,8,4,i,0,TAU);c.fillStyle='#438760';c.fill();}line(126,90,173,49,'#438760',4);}if(n===13){box(125,45,49,49,'#9aa9ad','#687d81');if(a>.85){line(148,48,142,68,'#354e55',3);line(142,68,162,89,'#354e55',3);}}}else burst(150,70,28);pointer(121,ice?76:112);text(ice?'MATCH ON ICE':'MATCH NEXT TO THE OBSTACLE',150,23,11);text(n===13?'REPEAT TO CRACK STONE':a>.85?'LAYER CLEARED':'MAKE A MATCH',150,148,10);
 }else if(kind.startsWith('POWER:')){const power=kind.split(':')[1],gather=Math.floor(time/5)%2===1,count=gather?(power==='RAINBOW'?9:power==='ROW'?5:7):(power==='ROW'?4:5);for(let i=0;i<count;i++){let p=[27+i*22,72];if(gather)p=[38+(i%3)*25,43+Math.floor(i/3)*25];else if(power==='BOMB')p=i<3?[35+i*25,47]:[60,47+(i-2)*25];gem(...p,0,10*(1-a*.18));}arrow([[146,72],[186,72]]);if(t>1.5)icon(power==='ROW'?'LIGHTNING':power,235,72,24+a*6);text(gather?'GATHER: '+count+' CONNECTED GEMS':power==='BOMB'?'SWAP: 5 IN A T OR L':'SWAP: '+count+' IN A LINE',150,146,11);
 }else if(kind==='FIRE_POWER'){for(let y=0;y<3;y++)for(let x=0;x<5;x++){if(x===2&&y===1){if(t<2.2)icon('LIGHTNING',150,73,17);}else gem(74+x*38,37+y*36,(x+y)%5,14*(y===1?1-a:1));}if(t<2)pointer(150,73);else line(55,73,245,73,'#efbb37',4);text('GATHER / SHIFT: TAP A ROW POWER',150,146,10);
@@ -59,34 +76,44 @@ icon(kind,38,72-Math.sin(a*Math.PI)*8,26);for(let y=0;y<5;y++)for(let x=0;x<5;x+
 }else if(kind==='COMBINE'){icon('BOMB',lerp(65,140,a),73,25);icon('LIGHTNING',lerp(230,160,a),73,25);if(a>.9)burst(150,73,50);text('SWAP TWO POWERS TOGETHER',150,146,11);
 }else if(kind==='GOALS'){['MOVE','LANTERN','GOALS'].forEach((k,i)=>{icon(k,65+i*85,64,25);text(t>i+1?'✓':String(3-i),65+i*85,113,22);});text('COMPLETE EVERY GOAL',150,146,11);
 }else if(kind==='RATING'){for(let i=0;i<3;i++){text('★',80+i*70,80,42,t>i+.5?'#d9a12d':'#abbeb7');}icon('BUILD_COIN',150,116,15);text('IMPROVE YOUR BEST → BUILD COINS',150,149,10);
-}else if(kind==='PENALTY'){icon('TIME',62,70,29);text('NO MATCH',195,58,17);text(t>2?'10 → 9 MOVES':'HARD OR HIGHER',195,90,13);text('AN INVALID MOVE COSTS A TURN',150,146,10);
+}else if(kind==='PENALTY'){icon('BONUS_MOVES',62,70,29);text('NO MATCH',195,58,17);text(t>2?'10 → 9 MOVES':'HARD OR HIGHER',195,90,13);text('AN INVALID MOVE COSTS A TURN',150,146,10);
 }else if(kind==='RELIC_DIRECTIONS'){for(let i=0;i<2;i++){let x=75+i*150,from=i?115:52,to=i?52:115;text(i?'RISING TIDES':'NORMAL',x,27,12);arrow([[x+30,from],[x+30,to]]);icon('LANTERN',x,lerp(from,to,a),19);line(x-23,to+12,x+23,to+12,'#bd8e2e',3);}text('DELIVER TO THE MARKED EXIT',150,149,10);
-}else if(kind==='TIME'){icon('TIME',55,75,30);text('TIME 20 → '+(20+Math.round(30*a)),200,63,16);text('MOVES 4 → '+(4+Math.round(5*a)),200,102,16);
+ }else if(kind==='TIME'){
+ icon('BONUS_MOVES',70,46,22);text('MOVES   4 → '+(4+Math.round(5*a)),185,52,16);
+ icon('TIME',70,110,22);text('TIME   20 → '+(20+Math.round(30*a))+' s',185,116,16);
+
 }else if(kind==='LIFE'){for(let i=0;i<3;i++){circle(90+i*60,75,24,'#c6d8d2');if(i<2||a>.5)icon('LIFE',90+i*60,75,23);}if(a>.5)burst(210,75,30);text('CLAIM A SAVED LIFE',150,146,11);
 }else if(kind.startsWith('DIFFICULTY:')){const rank=kind.endsWith('ALL')?Math.floor(time/1.5)%6-1:+kind.split(':')[1];badge(rank);text(['VERY EASY · FLOWER','EASY · CIRCLE','MEDIUM · CLIPPED SQUARE','HARD · DIAMOND','EXTREME · HEXAGON','LEGENDARY · STAR'][rank+1],150,139,11);
 }else if(kind==='MAP'){
- const landscape=asset('journal/paperwing-library.webp');
- if(landscape.complete && landscape.naturalWidth){
-  const cropHeight=landscape.naturalWidth*160/300;
-  c.drawImage(landscape,0,(landscape.naturalHeight-cropHeight)*.55,landscape.naturalWidth,cropHeight,0,0,300,160);
- }
- const stops=[[37,97],[102,65],[171,78],[250,39]];
- c.lineJoin='round';c.lineCap='round';
- for(const [stroke,width] of [['#76562c',7],['#ffe39b',4]]){
-  c.beginPath();stops.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.strokeStyle=stroke;c.lineWidth=width;c.stroke();
- }
- stops.forEach(([x,y],i)=>{circle(x,y,10,i<2?'#ffda7b':'#385c54','#795b32');text(String(i+1),x,y+4,11,i<2?'#3d372a':'#fff8d9');});
- const travel=smooth(.35,2.4,t);
- icon('pip.webp',lerp(37,102,travel),lerp(97,65,travel)-20-Math.sin(travel*Math.PI)*7,17);
- box(0,124,300,36,'#183f3e');text('FOLLOW THE TRAIL',74,146,12,'#fff7de');
- box(186,129,102,25,'#ffdb81','#bf9145');text('▶  PLAY',237,146,12,'#3c3728');
+ scene('map',4,4,292,126);
+ text(a<.6?'OPEN MY MAP':'TAP A PARCEL OR OPEN THE TRAIL',150,149,11);
+}else if(kind==='FORK'){
+ const labels=['Gold fare','Gold fare','1 ad','2 ads'];
+ labels.forEach((label,i)=>{
+  const x=20+(i%2)*132,y=21+Math.floor(i/2)*50;
+  box(x,y,125,40,['#ffd47e','#ffd47e','#b8e9dc','#d9c6eb'][i]);
+  text(label,x+62,y+25,14);
+ });
+ if(a>.4)pointer(101,50);
+ text('CHOOSE A ROUTE FOR FIVE LEVELS',150,146,11);
+}else if(kind==='DETAIL'){
+ scene('hero',0,0,300,128);
+ text(t<2.3?'CHOOSE A LANDMARK DESIGN':'FOLLOW THE PLACEMENT PROMPT',150,149,11);
 }else if(kind==='SHOP'){icon('COINS',50,68,27);icon('HAMMER',250,68,27);box(103,48,94,38,'#f8d879');text('BUY',150,73,16);pointer(177,77);text('CHECK PRICE → CONFIRM → INVENTORY',150,141,10);
-}else if(kind==='PAIRS'){for(let i=0;i<2;i++){const w=Math.max(4,Math.abs(Math.cos(a*Math.PI))*65),x=105+i*90;box(x-w/2,27,w,88,a<.5?'#1e544b':'#fff9e8');if(a>.65)icon('pip.webp',x,69,25);else if(a<.3)icon('BOOK',x,70,22);}if(a===1)burst(150,75,65);text('REVEAL TWO · FIND THE MATCH',150,146,11);
-}else if(kind==='DISCOVERY'){for(let i=0;i<2;i++){box(17+i*140,27,126,100,'#cee8d4');icon('discovery',80+i*140,75,44);if(i===0){text('★',100,54,20,'#b97c17');}if(a>.2)circle(100+i*140,47,15,null,'#d74d86');}text('SPOT THE MISSING OBJECT',150,149,11);
-}else if(kind==='SLOTS'){for(let x=0;x<5;x++)for(let y=0;y<3;y++){const k=y===1&&a===1?'COINS':['GIFT','COINS','HINT'][(x+y+Math.floor((1-a)*20))%3];icon(k,54+x*48,30+y*38,16);}if(a===1)line(32,68,268,68,'#d8a32e',3);text('MATCH SYMBOLS ON THE PAYLINES',150,149,10);
-}else if(kind==='WHEEL'){c.save();c.translate(150,76);c.rotate((1-(1-a)**3)*TAU*2);icon('WHEEL',0,0,59);c.restore();icon('COINS',150,76,18);c.beginPath();c.moveTo(143,12);c.lineTo(157,12);c.lineTo(150,29);c.closePath();c.fillStyle='#735b8e';c.fill();text('TAP TO SPIN · POINTER MARKS PRIZE',150,149,10);
+}else if(['PAIRS','DISCOVERY','SLOTS','WHEEL'].includes(kind)){
+ const prompts={
+  PAIRS:['TURN OVER TWO CARDS','FIND ALL TEN MATCHING PAIRS'],
+  DISCOVERY:['COMPARE BOTH PICTURES','TAP EIGHT CHANGED DETAILS'],
+  SLOTS:['CHOOSE YOUR STAKE AND SPIN','CHECK THE FIVE PAYLINES'],
+  WHEEL:['TAP TO SPIN','THE TOP POINTER MARKS YOUR PRIZE']
+ };
+ scene(kind.toLowerCase(),4,3,292,125);
+ text(prompts[kind][a>.5?1:0],150,147,11);
 }else if(kind==='TOKEN'){icon('WHEEL',51,70,26);arrow([[89,70],[124,70]]);icon('INVENTORY',161,70,29);arrow([[199,70],[222,70]]);icon('WHEEL',253,70,24);text('SAVED TOKEN → INVENTORY → REPLAY',150,143,10);
-}else if(kind==='BUILD'){const stage=1+Math.min(2,Math.floor(a*2.99));const pic=asset(stage<3?'construction.webp':'buildings.webp');if(pic.complete&&pic.naturalWidth){if(stage<3)c.drawImage(pic,780,stage===1?160:520,380,stage===1?280:430,94,stage===1?51:21,112,stage===1?82:112);else c.drawImage(pic,8,6,365,323,85,20,130,115);}icon('HAMMER',246,65-Math.abs(Math.sin(time*5))*7,22);text(['FOUNDATION · 4 BUILD COINS','FRAMEWORK · 6 BUILD COINS','FINISHED · 10 BUILD COINS'][stage-1],150,149,10);
+}else if(kind==='BUILD'){
+ scene('map',4,3,292,125);
+ const stage=Math.min(2,Math.floor(a*2.99));
+ text(['FOUNDATION · 4 BUILD COINS','FRAMEWORK · 6 BUILD COINS','FINISH · 10 BUILD COINS'][stage],150,149,11);
 }else if(kind==='INVENTORY'){['HAMMER','RAINBOW','LIFE','WHEEL','DISCOVERY','PAIRS'].forEach((k,i)=>{const x=77+(i%3)*73,y=45+Math.floor(i/3)*65;box(x-28,y-26,56,54);icon(k,x,y,23);});text('BOOSTERS & LIVES · TOKENS',150,151,10);
 }else if(kind==='SETTINGS'){icon('SETTINGS',48,77,28);for(let i=0;i<2;i++){const y=52+i*53;text(i?'EFFECTS':'MUSIC',176,y-12,11);line(105,y+4,256,y+4,'#a5bcb0',6);circle(lerp(130,220,i?1-a:a),y+4,8,'#dbac4d','#9f7d38');}}
 else if(kind==='JOURNAL'){icon('BOOK',70,73,37);box(130,29,145,93);text('PIP’S JOURNAL',202,51,12);for(let i=0;i<3;i++)if(t>i*.7)line(146,70+i*13,256-(i%2)*25,70+i*13,'#79978b',3);text('READ · PAUSE · REVISIT',150,148,11);

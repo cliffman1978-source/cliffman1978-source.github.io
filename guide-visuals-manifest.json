@@ -287,6 +287,20 @@
     "caption": "Follow the gold Play button"
   },
   {
+    "id": "choose-your-adventure",
+    "title": "CHOOSE YOUR ADVENTURE",
+    "kind": "FORK",
+    "icon": "book",
+    "caption": "Choose a destination for the next five levels."
+  },
+  {
+    "id": "place-a-landmark-detail",
+    "title": "PLACE A LANDMARK DETAIL",
+    "kind": "DETAIL",
+    "icon": "build_coin",
+    "caption": "Pick a design and follow its placement prompt at the worksite."
+  },
+  {
     "id": "map-difficulty-key",
     "title": "MAP DIFFICULTY KEY",
     "kind": "DIFFICULTY:ALL",

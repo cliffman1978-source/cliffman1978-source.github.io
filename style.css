@@ -157,3 +157,41 @@ html{scroll-padding-top:80px}.story-cover{display:flex;align-items:center;min-he
 .tour-coins{display:grid;place-items:center;gap:5px;padding:32px;background:radial-gradient(ellipse at center,#fff8c9,#ebd295);color:#513d21}.tour-coins img{width:72px}.tour-coins strong{font:700 25px Georgia,serif}
 .tour-finish{border:1px solid #c5b98d;background:#f4eed8;border-radius:18px;padding:clamp(18px,3vw,36px)}.tour-finish>div{flex:1 1 300px}.tour-finish p{margin:0}.tour-finish .play-badge img{width:166px}
 @media(max-width:700px){.tour-stop{display:flex;flex-direction:column;align-items:stretch;gap:14px}.tour-media video{height:260px}.tour-index a{font-size:14px}.tour-cover{background-image:linear-gradient(90deg,#143e3bf5,#153f3bc9 75%,#153f3ba3),url('assets/journal/copperleaf-railway.webp')}}
+
+/* The same storybook title and interface families as the Android game. */
+@font-face{font-family:Bree;src:url('assets/type/BreeSerif.ttf') format('truetype');font-display:swap}
+@font-face{font-family:RealmNunito;src:url('assets/type/Nunito.ttf') format('truetype');font-weight:200 900;font-display:swap}
+.realm-edition{--ink:#403249;--green:#40665b;--muted:#665863;--paper:#fff9e9;--line:#dbcca5;background:#fff9e9;color:var(--ink);font-family:RealmNunito,system-ui,sans-serif}
+.realm-edition :is(h1,h2,h3,h4,.brand,.footer-brand){font-family:Bree,Georgia,serif;font-weight:400}
+.realm-edition .header{background:#fff9eb;color:#453348;border-bottom:1px solid #dac9a6}
+.realm-edition .header .brand{font:400 23px Bree,Georgia,serif;color:#50334c}
+.realm-edition .site-menu summary,.realm-edition .filter[aria-pressed=true]{background:#765471;color:#fff9ea}
+.realm-edition .header a,.realm-edition .realm-links a{color:#4a4752}
+.realm-hero{max-width:1400px;display:grid;grid-template-columns:minmax(310px,.78fr) minmax(0,1.24fr);margin:clamp(12px,2.8vw,36px) auto 0;overflow:hidden;border-radius:32px;border:1px solid #d6b77d;background:#faedcd;box-shadow:0 8px 30px #76542813}
+.realm-intro{padding:clamp(24px,4vw,64px);align-self:center}.edition-label{font-size:.8rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#765471;margin:0 0 14px}
+.realm-intro h1{font:400 clamp(58px,6vw,100px)/.94 Bree,Georgia,serif;letter-spacing:-.045em;color:#48364c;margin:0}
+.realm-intro h1 em{font-style:normal;color:#7b465c}.hero-deck{font-size:clamp(16px,1.45vw,21px);max-width:37ch;line-height:1.45}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 15px}.realm-edition .button{border-radius:12px;border:1px solid #ac8655;line-height:1.26;padding:12px 16px}
+.realm-edition .button.gold{background:#ffd078;color:#473244}.realm-edition .button.cream{background:#e1f1df;color:#374d46}
+.realm-intro .play-badge img{width:142px}.realm-intro small{display:block;font-size:.78rem;color:#655659}
+.realm-hero-art{margin:0;position:relative;display:flex;align-items:stretch;background:#d5bc71}.realm-hero-art>img{width:100%;height:100%;min-height:360px;object-fit:cover;object-position:center}
+.realm-hero-art figcaption{position:absolute;right:16px;bottom:16px;padding:8px 15px;border-radius:12px;background:#fff6dff2;color:#513b39;font:400 22px Bree,Georgia,serif}.realm-hero-art figcaption span{display:block;font:700 .76rem RealmNunito,sans-serif}
+.realm-edition .trail-strip{background:#d4e9d8;color:#394e48;border-bottom:1px solid #afc6ae;margin-top:16px}
+.feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.realm-feature{border-radius:20px;overflow:hidden;border:1px solid #d4bea0;background:#fffdf4;color:var(--ink);text-decoration:none;box-shadow:0 4px 0 #decda54d}
+.realm-feature>img{width:100%;height:clamp(145px,15vw,210px);object-fit:cover}.realm-feature>div{padding:16px 20px}.realm-feature h3{font-size:25px;margin:0}.realm-feature p{margin:4px 0;line-height:1.5}.realm-feature:hover,.realm-feature:focus-visible{border-color:#886b76}
+.realm-links{display:flex;flex-wrap:wrap;gap:10px 20px;margin:28px 0}.realm-links a{font-weight:750}
+.realm-edition .story-cover,.realm-edition .tour-cover{background:#f4e5ce url('assets/realm-update/hero.webp') right center / auto 100% no-repeat;color:var(--ink);border:1px solid #d5c19a}
+.realm-edition .story-cover>div,.realm-edition .tour-cover>div{padding:20px;border-radius:16px;background:#fff8eaf5;max-width:460px;color:var(--ink)}
+.realm-edition .story-kicker{color:#735369}.realm-edition .tour-cover h2,.realm-edition .story-cover h2{color:var(--ink)}
+.realm-edition .tour-cover{background-image:none;background-color:#e4efdf}.realm-edition .tour-cover p{color:var(--ink)}
+.map-spread,.receipt-pair{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);gap:18px;margin:22px 0}
+.game-shot{margin:0;overflow:hidden;border-radius:16px;background:#fff9e9;border:1px solid #d9c59f}.game-shot img{width:100%;height:clamp(170px,22vw,305px);object-fit:contain;background:#ecdfc3}.game-shot figcaption{padding:10px 15px;line-height:1.4}
+.story-shots,.receipt-pair{grid-template-columns:repeat(2,minmax(0,1fr))}.story-shots img{height:350px}.receipt-pair img{max-height:225px}.realm-edition .tour-media>img{object-fit:contain;background:#ecdfc3}
+.release-note{max-width:82ch;border-left:4px solid #96bba9;padding:8px 15px;background:#f0f3df}
+.bonus-description>img:first-child{width:100%;max-height:270px;object-fit:contain;background:#efe2c6;border:1px solid #dbc7aa;border-radius:14px;margin-bottom:15px}
+.cast-filter{display:flex;gap:10px;flex-direction:column;font-weight:700;max-width:30rem}.cast-filter input{background:#fffcf4;border:1px solid #b99d83;border-radius:12px;padding:10px 12px;font:inherit;width:100%}
+.cast-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,175px),1fr));gap:14px}.cast-entry{overflow:hidden;border-radius:20px;border:1px solid #d9c49a;background:#faf0d7}.cast-entry>div{padding:12px 16px;background:#fff9eb}.cast-art{display:block;aspect-ratio:1;background-size:500% 200%;background-repeat:no-repeat}
+.cast-entry h3,.cast-entry p{margin:0}.cast-entry h3{font-size:22px}.cast-entry details{margin-top:8px;font-size:.88rem}.cast-entry summary{cursor:pointer;color:#4b6552}.practice-board{touch-action:pinch-zoom}
+.realm-edition .section-heading,.realm-edition .back-hub{color:var(--ink)}.realm-edition footer{background:#594459;color:#fff4df}.realm-edition footer a{color:#fff4df}
+@media(max-width:1450px){.realm-hero{margin-inline:clamp(12px,3vw,44px)}}
+@media(max-width:760px){.realm-hero{grid-template-columns:1fr;margin-top:12px;border-radius:22px}.realm-intro{padding:22px 24px}.realm-intro h1{font-size:54px}.realm-intro h1 br{display:none}.realm-intro h1 em:before{content:' '}.realm-intro .hero-deck{margin-block:10px}.hero-actions{margin:12px 0}.realm-hero-art>img{min-height:0;height:auto;aspect-ratio:1200/736}.realm-hero-art figcaption{font-size:18px}.feature-grid{grid-template-columns:1fr}.realm-feature{display:grid;grid-template-columns:38% 1fr}.realm-feature>img{height:100%;min-height:125px}.realm-feature>div{padding:12px}.map-spread{grid-template-columns:1fr}.story-shots,.receipt-pair{grid-template-columns:repeat(2,minmax(0,1fr))}.story-shots img{height:auto}.receipt-pair img{height:auto}.game-shot figcaption{padding:8px;font-size:.88rem}.realm-edition .story-cover{align-items:end;padding:16px;background-position:center top;background-size:100% auto}.realm-edition .story-cover>div{padding:15px;margin-top:140px}.cast-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.cast-entry>div{padding:10px}.cast-entry h3{font-size:19px}}
